@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Button from '.';
 
-storiesOf('Atoms | Button', module)
+storiesOf('Atoms/Button', module)
   .add('Prymary', () => (
     <Button buttonType='primary' onClick={action('click')}>
       Primary Button

@@ -13,3 +13,5 @@ In the project directory, you can run:
 ### `npm run test`
 
 ### `npm run build`
+
+### `npm run storybook`

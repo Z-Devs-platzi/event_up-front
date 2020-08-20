@@ -1,17 +1,30 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+// REF https://www.learnstorybook.com/intro-to-storybook/react/en/simple-component/
 import Button from '.';
 
-storiesOf('Atoms/Button', module)
-  .add('Prymary', () => (
-    <Button buttonType='primary' onClick={action('click')}>
-      Primary Button
-    </Button>
-  ))
-  .add('Secondary', () => (
-    <Button buttonType='secondary' onClick={action('click')}>
-      Secondary Button
-    </Button>
-  ));
+const Story = (args) => <Button {...args} />;
+
+// Each story then reuses that template
+export const Primary = Story.bind({});
+
+Primary.args = {
+  children: 'Button Primary',
+  onClick: action('click Primary'),
+  buttonType: 'primary',
+};
+
+export const Secondary = Story.bind({});
+Secondary.args = {
+  children: 'Button Secondary',
+  onClick: action('click Secondary'),
+  buttonType: 'secondary',
+};
+
+export default {
+  component: Button,
+  title: 'Atom/Button',
+  // Our exports that end in "Data" are not stories.
+  excludeStories: /.*Data$/,
+};

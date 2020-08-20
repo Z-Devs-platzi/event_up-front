@@ -12,6 +12,14 @@
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@storybook/addon-actions": "^6.0.13",
+    "@storybook/addon-essentials": "^6.0.13",
+    "@storybook/addon-links": "^6.0.13",
+    "@storybook/node-logger": "^6.0.13",
+    "@storybook/preset-create-react-app": "^3.1.4",
+    "@storybook/react": "^6.0.13",
+    "babel-loader": "^8.1.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-prettier": "^3.1.4",
@@ -20,13 +28,16 @@
     "husky": "^4.2.5",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
+    "react-is": "^16.13.1",
     "react-router-dom": "^5.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "pretty-quick": "pretty-quick"
+    "pretty-quick": "pretty-quick",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "author": "Alejandro Medina",
   "license": "MIT",

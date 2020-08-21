@@ -1,4 +1,5 @@
 ![CI](https://github.com/Z-Devs-platzi/frontend/workflows/CI/badge.svg)
+![CD](https://github.com/Z-Devs-platzi/frontend/workflows/CD/badge.svg)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -1,8 +1,9 @@
-const API_URL = process.env.REACT_APP_API_URL;
+import { API_URL } from '../api';
+import axios from 'axios';
 
-export const API = () => {
-  console.log(
-    `%c ${API_URL} is the current API URL`,
-    'color:white; background-color: green;'
-  );
-};
+const API = axios.create({
+  baseURL: API_URL,
+  timeout: 10000,
+});
+
+export default API;

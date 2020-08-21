@@ -1,6 +1,9 @@
 import React from 'react';
 import { Route, Switch, HashRouter } from 'react-router-dom';
 
+import { API } from '../utility/api';
+
+API();
 const App = () => (
   <HashRouter basename='/'>
     <Switch>

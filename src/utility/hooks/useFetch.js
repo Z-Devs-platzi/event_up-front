@@ -7,7 +7,6 @@ export const useFetch = (enpoint, options) => {
     try {
       const res = await enpoint(options);
       setResponse(res);
-      setIsLoading(false);
     } catch (error) {
       setError(error);
     } finally {

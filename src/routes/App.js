@@ -1,13 +1,10 @@
 import React from 'react';
 import { Route, Switch, HashRouter } from 'react-router-dom';
-
-import { API } from '../utility/api';
-
-API();
+import Home from '../containers/Home';
 const App = () => (
   <HashRouter basename='/'>
     <Switch>
-      <Route exact path='/' component={() => <h1>HOME</h1>} />
+      <Route exact path='/' component={Home} />
       <Route
         component={() => (
           <h1>

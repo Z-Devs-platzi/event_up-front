@@ -1,9 +1,10 @@
 import React from 'react';
-import PrivateRoute from './PrivateRoute';
-import Home from '../containers/Home';
 import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+import Home from '../containers/Home';
+import PrivateRoute from './PrivateRoute';
 const AppRoutes = ({ authAndUser }) => {
-  console.log('AppRoutes', authAndUser);
   return (
     <>
       <PrivateRoute
@@ -16,4 +17,7 @@ const AppRoutes = ({ authAndUser }) => {
   );
 };
 
+AppRoutes.propTypes = {
+  authAndUser: PropTypes.bool,
+};
 export default withRouter(AppRoutes);

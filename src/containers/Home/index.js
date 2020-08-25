@@ -19,7 +19,7 @@ const Home = () => {
         ) : (
           <ul>
             {data.map((i) => (
-              <li key={i.id}>{i.first_name}</li>
+              <li key={i.id}>{i.name}</li>
             ))}
           </ul>
         )}

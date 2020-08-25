@@ -1,4 +1,4 @@
-import { LogingRequest, UserRequest } from './auth';
+import { LogingRequest, UserRequest, RegisterRequest } from './auth';
 
 describe('Enpoints | auth', () => {
   it('LogingRequest Defined', () => {

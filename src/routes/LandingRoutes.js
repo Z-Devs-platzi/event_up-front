@@ -1,7 +1,7 @@
 import React from 'react';
-import { Route, Switch } from 'react-router';
-import { Link } from 'react-router-dom';
+import { Route } from 'react-router';
 import { useAuthState } from '../context/auth-context';
+import { Link } from 'react-router-dom';
 const Landing = () => {
   return (
     <>
@@ -24,11 +24,11 @@ const Login = () => {
   );
 };
 const LandingRoutes = () => (
-  <Switch>
+  <>
     <Route path='/' exact component={Landing} />
     <Route path='/login' exact component={Login} />
     <Route path='/register' exact component={Register} />
     <Route component={() => <h4>404</h4>} />
-  </Switch>
+  </>
 );
 export default LandingRoutes;

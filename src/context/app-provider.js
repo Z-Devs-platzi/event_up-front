@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { AuthProvider } from './auth-context';
 import { UserProvider } from './user-context';
 function AppProviders({ children }) {
@@ -8,4 +9,4 @@ function AppProviders({ children }) {
     </AuthProvider>
   );
 }
-export default AppProviders;
+export default withRouter(AppProviders);

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import * as auth from '../auth-provider';
+import { useHistory } from 'react-router-dom';
 
 const FullPageSpinner = () => <h1>LoaDING!!!</h1>;
 
 const AuthContext = React.createContext();
 export const AuthProvider = (props) => {
+  let history = useHistory();
   const [data, setData] = useState({
     status: 'pending',
     error: null,
@@ -16,6 +18,7 @@ export const AuthProvider = (props) => {
     const responseUser = await auth.login(user, password);
     if (responseUser) {
       setData({ status: 'success', error: null, user: responseUser });
+      history.push('/dashboard');
     } else {
       setData({ status: 'error', error: responseUser, user: null });
     }

@@ -1,23 +1,22 @@
 import React from 'react';
-import { Route, Switch, HashRouter } from 'react-router-dom';
-import Home from '../containers/Home';
+import { HashRouter as Router } from 'react-router-dom';
+import { Switch } from 'react-router';
+
+import AppProviders from '../context/app-provider';
+import Routes from './Routes';
 import { GlobalStyle } from '../styles/GlobalStyles';
 import '../styles/fonts.css';
-
-const App = () => (
-  <HashRouter basename='/'>
-    <GlobalStyle />
-    <Switch>
-      <Route exact path='/' component={Home} />
-      <Route
-        component={() => (
-          <h1>
-            404 <br /> Woops{' '}
-          </h1>
-        )}
-      />
-    </Switch>
-  </HashRouter>
-);
+const App = () => {
+  return (
+    <Router>
+      <AppProviders>
+        <GlobalStyle />
+        <Switch>
+          <Routes />
+        </Switch>
+      </AppProviders>
+    </Router>
+  );
+};
 
 export default App;

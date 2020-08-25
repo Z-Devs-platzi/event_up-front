@@ -46225,10 +46225,12 @@
                 (0, _isString.default)(type) &&
                 (0, _isHtmlTag.isHtmlTag)(type)
               ) {
-                var jsxSummary = (0,
-                _reactElementToJsxString.default)(rawDefaultProp, {
-                  tabStop: 0,
-                }).replace(/\r?\n|\r/g, '');
+                var jsxSummary = (0, _reactElementToJsxString.default)(
+                  rawDefaultProp,
+                  {
+                    tabStop: 0,
+                  }
+                ).replace(/\r?\n|\r/g, '');
                 if (!(0, _lib.isTooLongForDefaultValueSummary)(jsxSummary))
                   return (0, _lib.createSummaryValue)(jsxSummary);
               }

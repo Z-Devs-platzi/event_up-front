@@ -939,12 +939,13 @@
             components: components,
             mdxType: 'MDXLayout',
           }),
-          Object(
-            _mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx
-          )(_storybook_addon_docs_blocks__WEBPACK_IMPORTED_MODULE_2__.Meta, {
-            title: 'Example/Introduction',
-            mdxType: 'Meta',
-          }),
+          Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)(
+            _storybook_addon_docs_blocks__WEBPACK_IMPORTED_MODULE_2__.Meta,
+            {
+              title: 'Example/Introduction',
+              mdxType: 'Meta',
+            }
+          ),
           Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)(
             'style',
             null,

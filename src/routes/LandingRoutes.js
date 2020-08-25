@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router';
 import { useAuthState } from '../context/auth-context';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 const Landing = () => {
   return (
     <>
@@ -12,8 +13,7 @@ const Landing = () => {
 };
 const Register = () => <h1>Register</h1>;
 const Login = () => {
-  let { login, data } = useAuthState();
-  console.log('ROUTES LANDING', data.user);
+  let { login } = useAuthState();
   return (
     <>
       <h1>LOGIN</h1>
@@ -28,7 +28,6 @@ const LandingRoutes = () => (
     <Route path='/' exact component={Landing} />
     <Route path='/login' exact component={Login} />
     <Route path='/register' exact component={Register} />
-    <Route component={() => <h4>404</h4>} />
   </>
 );
-export default LandingRoutes;
+export default withRouter(LandingRoutes);

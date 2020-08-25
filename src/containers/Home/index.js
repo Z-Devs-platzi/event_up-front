@@ -1,7 +1,9 @@
 import React from 'react';
 import { useFetch } from '../../utility/hooks/useFetch';
 import { SearchPeopleSW } from '../../utility/enpoints/search';
+import { useAuthState } from '../../context/auth-context';
 const Home = () => {
+  let { logout } = useAuthState();
   const { response, isLoading } = useFetch(SearchPeopleSW, {
     params: { search: 'r2' },
     body: null,
@@ -21,6 +23,7 @@ const Home = () => {
             ))}
           </ul>
         )}
+        <button onClick={() => logout()}>LogOut</button>
       </section>
     </>
   );

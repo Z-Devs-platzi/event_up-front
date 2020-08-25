@@ -1,14 +1,17 @@
 import React from 'react';
-import { HashRouter } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import Routes from './Routes';
+import { Switch } from 'react-router';
 import AppProviders from '../context/app-provider';
 const App = () => {
   return (
-    <HashRouter>
+    <Router>
       <AppProviders>
-        <Routes />
+        <Switch>
+          <Routes />
+        </Switch>
       </AppProviders>
-    </HashRouter>
+    </Router>
   );
 };
 

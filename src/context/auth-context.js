@@ -28,6 +28,7 @@ export const AuthProvider = (props) => {
     // remove info on localStorage and clean the user
     auth.logout();
     setData({ status: 'success', error: null, user: null });
+    history.push('/');
   }; // clear the token in localStorage and the user data
   useEffect(() => {
     let token = auth.getToken();

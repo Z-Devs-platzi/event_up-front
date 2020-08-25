@@ -5,11 +5,11 @@ import { useAuthState } from '../../context/auth-context';
 const Home = () => {
   let { logout } = useAuthState();
   const { response, isLoading } = useFetch(SearchPeopleSW, {
-    params: { search: 'r2' },
+    params: { page: '2' },
     body: null,
     path: '',
   });
-  const { results = [] } = response;
+  const { data = [] } = response;
   return (
     <>
       <section>
@@ -18,8 +18,8 @@ const Home = () => {
           <div>Loading...</div>
         ) : (
           <ul>
-            {results.map((i) => (
-              <li key={i.name}>{i.name}</li>
+            {data.map((i) => (
+              <li key={i.id}>{i.first_name}</li>
             ))}
           </ul>
         )}

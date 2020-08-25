@@ -1,26 +1,44 @@
 const localStorageKey = '__event_up_auth_provider_token__';
+// Fake API;
+const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
+const postAuth = () =>
+  sleep(1000).then(() => ({ authToken: 'LDMFAOBGfogfgafsangokFASG"$"4' })); //.then(() => null);
+const getUser = () => sleep(1000).then(() => ({ name: 'elmo', id: '1412' })); //.then(() => null);
+// getUser().then(
+//     (user) => setState({ status: 'success', error: null, user }),
+//     (error) => setState({ status: 'error', error, user: null })
+//   );
 
-async function getToken() {
-  return window.localStorage.getItem(localStorageKey);
+async function userByToken(token) {
+  let userInfo = await getUser(token);
+  return userInfo;
+}
+function getToken() {
+  return window.sessionStorage.getItem(localStorageKey);
 }
 
-function handleUserResponse({ user }) {
-  window.localStorage.setItem(localStorageKey, user.id);
-  return user;
+function handleAuthResponse({ authToken }) {
+  window.sessionStorage.setItem(localStorageKey, authToken);
+  return authToken;
 }
 
-function login({ username, password }) {
-  return client('/user/1', { username, password }).then(handleUserResponse);
+async function login({ username, password }) {
+  // TODO change here for the real method
+  postAuth({ username, password }).then(handleAuthResponse);
+  let userInfo = await getUser({ username, password });
+  console.log('USER INFO', userInfo);
+  return userInfo;
 }
 
 function register({ username, password }) {
-  return client('/user/1', { username, password }).then(handleUserResponse);
+  // TODO change here for the real method
+  return postAuth({ username, password }).then(handleAuthResponse);
 }
 
 async function logout() {
-  window.localStorage.removeItem(localStorageKey);
+  window.sessionStorage.removeItem(localStorageKey);
 }
-
+/**
 const authURL = process.env.REACT_APP_API_URL;
 
 async function client(endpoint, data) {
@@ -41,5 +59,6 @@ async function client(endpoint, data) {
       }
     });
 }
+ */
 
-export { getToken, login, register, logout, localStorageKey };
+export { getToken, login, register, logout, localStorageKey, userByToken };

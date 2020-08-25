@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './routes/App';
 import * as serviceWorker from './serviceWorker';
-import { AuthProvider } from './context/auth-context';
+import AppProviders from './context/app-provider';
 
 ReactDOM.render(
-  <AuthProvider>
+  <AppProviders>
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  </AuthProvider>,
+  </AppProviders>,
   document.getElementById('root')
 );
 

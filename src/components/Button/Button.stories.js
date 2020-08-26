@@ -8,7 +8,6 @@ const Story = (args) => <Button {...args} />;
 
 // Each story then reuses that template
 export const Primary = Story.bind({});
-
 Primary.args = {
   children: 'Button Primary',
   onClick: action('click Primary'),
@@ -20,6 +19,13 @@ Secondary.args = {
   children: 'Button Secondary',
   onClick: action('click Secondary'),
   buttonType: 'secondary',
+};
+
+export const Action = Story.bind({});
+Action.args = {
+  children: 'Action Button ',
+  onClick: action('click Action'),
+  buttonType: 'action',
 };
 
 export default {

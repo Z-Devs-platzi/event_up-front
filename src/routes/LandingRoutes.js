@@ -3,19 +3,11 @@ import { Route } from 'react-router';
 import { useAuthState } from '../context/auth-context';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-import Button from '../components/Button';
-import bxCalendarEdit from '@iconify/icons-bx/bx-calendar-edit';
 
 const Landing = () => {
   return (
     <>
       <h1>Landing</h1>
-      <Button
-        children='new event'
-        buttonType={'primary'}
-        icon={bxCalendarEdit}
-      />
-
       <Link to='/login'>loging</Link>
     </>
   );

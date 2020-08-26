@@ -2,7 +2,7 @@ import React from 'react';
 
 import { action } from '@storybook/addon-actions';
 // REF https://www.learnstorybook.com/intro-to-storybook/react/en/simple-component/
-import Button from './index';
+import Button from '.';
 
 const Story = (args) => <Button {...args} />;
 

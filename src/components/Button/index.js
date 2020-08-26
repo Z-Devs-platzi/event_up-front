@@ -6,13 +6,7 @@ import { Buttons } from './styles';
 const Button = ({ children, buttonType, onClick, icon, iconSmall }) => (
   <Buttons buttonType={buttonType} onClick={onClick}>
     {children}
-    {icon ? (
-      <InlineIcon icon={icon} />
-    ) : iconSmall ? (
-      <InlineIcon icon={iconSmall} />
-    ) : (
-      ''
-    )}
+    {icon && <InlineIcon icon={icon} />}
   </Buttons>
 );
 

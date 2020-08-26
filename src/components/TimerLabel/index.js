@@ -1,45 +1,63 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useTimer } from '../../utility/hooks/useTimer';
-import { SpanTimer } from './styles';
+import { CountTimer, SimpleLavel } from './styles';
+import { CenterDiv } from '../../styles/GlobalStyles';
 
-const TimerLabel = ({ date, size, color, showlabel }) => {
+const TimerLabel = ({
+  date,
+  sizeTime,
+  sizeLabel,
+  colorTime,
+  showLabel,
+  colorLabel,
+}) => {
   let { timeLeft } = useTimer(date);
   const timerComponents = [];
 
   Object.keys(timeLeft).forEach((interval) => {
-    let label = showlabel
-      ? ` ${timeLeft[interval]} ${interval.toLocaleUpperCase()} `
-      : `${timeLeft[interval]} ${interval[0].toLocaleUpperCase()}`;
     timerComponents.push(
-      <SpanTimer size={size} color={color} key={interval}>
-        {label}
-      </SpanTimer>
+      <CenterDiv>
+        <CountTimer size={sizeTime} color={colorTime} key={interval}>
+          {timeLeft[interval]}
+        </CountTimer>
+        {showLabel ? (
+          <SimpleLavel size={sizeLabel} color={colorLabel}>
+            {interval.toLocaleUpperCase()}
+          </SimpleLavel>
+        ) : null}
+      </CenterDiv>
     );
   });
   return (
-    <div>
+    <CenterDiv direction={'row'}>
       {timerComponents.length ? (
         timerComponents
       ) : (
-        <SpanTimer size={size}>Time Is Up!</SpanTimer>
+        <CountTimer color={colorTime} size={sizeTime}>
+          Time Is Up!
+        </CountTimer>
       )}
-    </div>
+    </CenterDiv>
   );
 };
 const tomorrow = new Date();
 TimerLabel.defaultProps = {
   date: tomorrow.setDate(tomorrow.getDate() + 1),
-  size: 1,
-  color: '#000000',
-  showlabel: true,
+  sizeTime: 96,
+  sizeLabel: 23,
+  colorTime: '#FFD43B',
+  colorLabel: '#DBE7E8',
+  showLabel: true,
 };
 
 TimerLabel.propTypes = {
   date: PropTypes.number.isRequired,
-  size: PropTypes.number,
-  color: PropTypes.string,
-  showlabel: PropTypes.bool,
+  sizeTime: PropTypes.number,
+  sizeLabel: PropTypes.number,
+  colorTime: PropTypes.string,
+  colorLabel: PropTypes.string,
+  showLabel: PropTypes.bool,
 };
 
 export default TimerLabel;

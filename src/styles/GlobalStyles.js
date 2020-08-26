@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 	:root {
@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
 		--published: #3EE778;
 		--error: #FFCFC9;
 		--success: #C6FFD9;
-		--gradient-green: linear-gradient(var(---primary-color) 50%, #417E86);
+		--gradient-green: linear-gradient(var(--primary-color) 50%, #417E86);
 		--gradient-light-green: linear-gradient(#DBE7E8 40%, #E3ECED);
 		--shadow: 0 4px 8px rgba(55,55,55,.1);
 	}
@@ -57,4 +57,11 @@ export const GlobalStyle = createGlobalStyle`
     border: 0;
     outline: 0;
 	}
+`;
+
+export const CenterDiv = styled.div`
+  display: flex;
+  flex-direction: ${(props) => (props.direction ? props.direction : 'column')};
+  align-items: center;
+  justify-content: center;
 `;

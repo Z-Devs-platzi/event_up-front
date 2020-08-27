@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import bxLoaderAlt from '@iconify/icons-bx/bx-loader-alt';
 
-import { SpinerContainer } from './style';
+import { SpinerContainer } from './styles';
 const Spiner = ({ size, color }) => (
   <SpinerContainer color={color} size={size}>
     <Icon icon={bxLoaderAlt} />

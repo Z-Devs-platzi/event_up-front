@@ -1,3 +1,3 @@
 import { BaseGenpoint } from '../api';
 
-export const SearchPeopleSW = BaseGenpoint('user', 'get');
+export const SearchPeopleSW = BaseGendpoint('user', 'get');

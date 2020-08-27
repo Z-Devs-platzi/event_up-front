@@ -5,7 +5,7 @@ const API = axios.create({
   baseURL: API_URL,
   timeout: 10000,
 });
-export const BaseGenpoint = (base, verb) => ({
+export const BaseGendpoint = (base, verb) => ({
   path = '',
   body = null,
   params,

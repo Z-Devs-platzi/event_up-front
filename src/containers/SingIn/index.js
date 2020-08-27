@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { CenterDiv, CardDiv } from '../../styles/GlobalStyles';
 import { useAuthState } from '../../context/auth-context';
 import { useFormTextField } from '../../utility/hooks/useFormFields';
 import TextInput from '../../components/TextInput';
 import Button from '../../components/Button';
 import Spiner from '../../components/Spiner';
+import LandingWraper from '../../components/LandingWraper';
 const SingIn = () => {
   let { login, data } = useAuthState();
 
@@ -17,30 +20,32 @@ const SingIn = () => {
 
   return (
     <>
-      <section>
-        <h2>Sing In </h2>
+      <LandingWraper>
         <form onSubmit={handleSubmit}>
-          <div>
-            <TextInput
-              label='Email'
-              logical={emailField}
-              type={'email'}
-              id={'SI_email'}
-            />
-          </div>
-          <div>
-            <TextInput
-              label='Password'
-              logical={passwordField}
-              type={'password'}
-              id={'SI_password'}
-            />
-          </div>
-          <Button type='submit'>
-            {data.status === 'pending' ? <Spiner /> : 'Sing In'}
-          </Button>
+          <CardDiv>
+            <CenterDiv>
+              <TextInput
+                label='Email'
+                logical={emailField}
+                type={'email'}
+                id={'SI_email'}
+              />
+              <TextInput
+                label='Password'
+                logical={passwordField}
+                type={'password'}
+                id={'SI_password'}
+              />
+              <Button type='submit'>
+                {data.status === 'pending' ? <Spiner /> : 'Sing In'}
+              </Button>
+              <span>
+                Don’t have an account? <Link to='/signup'> Sign Up </Link>
+              </span>
+            </CenterDiv>
+          </CardDiv>
         </form>
-      </section>
+      </LandingWraper>
     </>
   );
 };

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const InpuText = styled.input`
+export const InpuText = styled.input.attrs((props) => ({
+  colorFocus: props.error ? '#FFCFC9' : props.colorFocus || '#FFD43B',
+}))`
   width: 300px;
   height: 35px;
   outline: none;
@@ -13,12 +15,13 @@ export const InpuText = styled.input`
   background: #ffffff;
   border: 1px solid #808080;
   border-radius: 8px;
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: ${(props) => props.colorFocus};
+    box-shadow: 0 0 4px ${(props) => props.colorFocus};
+  }
 `;
 export const LabelText = styled.label`
   color: #808080;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
 `;

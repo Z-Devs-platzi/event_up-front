@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo / Styles should test the styled-component Logo custom 1`] = `
+.c0 {
+  background-image: url(https://avatars2.githubusercontent.com/u/5388080?s=460&u=5402414fd0e79b83d14c93371973320948ba6d4f&v=4);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100px;
+  width: 250px;
+}
+
+<div
+  className="c0"
+  size={100}
+/>
+`;
+
+exports[`Logo / Styles should test the styled-component Logo default 1`] = `
+.c0 {
+  background-image: url(event_up_logo.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 50px;
+  width: 250px;
+}
+
+<div
+  className="c0"
+  size={50}
+/>
+`;

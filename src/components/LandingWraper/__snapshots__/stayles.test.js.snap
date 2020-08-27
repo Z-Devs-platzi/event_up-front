@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LandingWraper / Styles should test the styled-component LandingContent custom 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  color: var(--light-grey-2);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(https://avatars2.githubusercontent.com/u/5388080?s=460&u=5402414fd0e79b83d14c93371973320948ba6d4f&v=4);
+}
+
+<section
+  className="c0"
+  size="50"
+/>
+`;
+
+exports[`LandingWraper / Styles should test the styled-component LandingContent default 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  color: var(--light-grey-2);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(landing_background.png);
+}
+
+<section
+  className="c0"
+  size="50"
+/>
+`;

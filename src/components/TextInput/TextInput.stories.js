@@ -2,9 +2,15 @@ import React from 'react';
 
 import TextInput from '.';
 import { useFormTextField } from '../../utility/hooks/useFormFields';
+import { GlobalStyle } from '../../styles/GlobalStyles';
 const Story = (args) => {
   let Textlogical = useFormTextField('');
-  return <TextInput logical={Textlogical} {...args} />;
+  return (
+    <>
+      <GlobalStyle />
+      <TextInput logical={Textlogical} {...args} />
+    </>
+  );
 };
 
 export const Text = Story.bind({});

@@ -17,8 +17,8 @@ const TimerLabel = ({
 
   Object.keys(timeLeft).forEach((interval) => {
     timerComponents.push(
-      <CenterDiv>
-        <CountTimer size={sizeTime} color={colorTime} key={interval}>
+      <CenterDiv key={interval}>
+        <CountTimer size={sizeTime} color={colorTime}>
           {timeLeft[interval]}
         </CountTimer>
         {showLabel ? (
@@ -52,7 +52,7 @@ TimerLabel.defaultProps = {
 };
 
 TimerLabel.propTypes = {
-  date: PropTypes.number.isRequired,
+  date: PropTypes.instanceOf(Date).isRequired,
   sizeTime: PropTypes.number,
   sizeLabel: PropTypes.number,
   colorTime: PropTypes.string,

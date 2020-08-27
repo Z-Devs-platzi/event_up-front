@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TimerLabel / Styles CountTimer Custom 1`] = `
+.c0 {
+  padding: 0.25rem 1rem;
+  opacity: 1;
+  font-weight: 800;
+  color: #A44F44;
+  font-family: IBM Plex Sans;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 125px;
+  text-align: center;
+}
+
+<span
+  className="c0"
+  color="#A44F44"
+  size={70}
+/>
+`;
+
+exports[`TimerLabel / Styles CountTimer Default 1`] = `
+.c0 {
+  padding: 0.25rem 1rem;
+  opacity: 1;
+  font-weight: 800;
+  color: var(--secondary-color);
+  font-family: IBM Plex Sans;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 125px;
+  text-align: center;
+}
+
+<span
+  className="c0"
+  color="var(--secondary-color)"
+  size="96"
+/>
+`;
+
+exports[`TimerLabel / Styles SimpleLavel Custom 1`] = `
+.c0 {
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 31px;
+  text-align: center;
+  color: #A88FFF;
+}
+
+<p
+  className="c0"
+  color="#A88FFF"
+  size={10}
+/>
+`;
+
+exports[`TimerLabel / Styles SimpleLavel Default 1`] = `
+.c0 {
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 23px;
+  line-height: 31px;
+  text-align: center;
+  color: var(--light-green);
+}
+
+<p
+  className="c0"
+  color="var(--light-green)"
+  size="23"
+/>
+`;

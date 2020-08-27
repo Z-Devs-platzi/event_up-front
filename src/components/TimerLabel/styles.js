@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-export const CountTimer = styled.span`
+export const CountTimer = styled.span.attrs((props) => ({
+  color: props.color ? props.color : 'var(--secondary-color)',
+  size: props.size ? props.size : '96',
+}))`
   padding: 0.25rem 1rem;
   opacity: 1;
   font-weight: 800;
@@ -13,7 +16,10 @@ export const CountTimer = styled.span`
   text-align: center;
 `;
 
-export const SimpleLavel = styled.p`
+export const SimpleLavel = styled.p.attrs((props) => ({
+  color: props.color ? props.color : 'var(--light-green)',
+  size: props.size ? props.size : '23',
+}))`
   font-family: IBM Plex Sans;
   font-style: normal;
   font-weight: bold;

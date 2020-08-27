@@ -2,32 +2,47 @@ import React, { useState, useEffect } from 'react';
 import * as auth from '../auth-provider';
 import { useHistory } from 'react-router-dom';
 
-const FullPageSpinner = () => <h1>LoaDING!!!</h1>;
-
 const AuthContext = React.createContext();
 export const AuthProvider = (props) => {
   let history = useHistory();
   const [data, setData] = useState({
-    status: 'pending',
+    status: 'initial',
     error: null,
     user: null,
   });
   // make a login request
   const login = async (user, password) => {
+    setData({
+      status: 'pending',
+      error: null,
+      user: null,
+    });
     // save the info on localStorage and get user
-    const responseUser = await auth.login(user, password);
-    if (responseUser) {
-      setData({ status: 'success', error: null, user: responseUser });
-      history.push('/dashboard');
-    } else {
-      setData({ status: 'error', error: responseUser, user: null });
+    try {
+      const responseUser = await auth.login(user, password);
+      if (responseUser.hasOwnProperty('data')) {
+        setData({
+          status: 'success',
+          error: null,
+          user: { ...responseUser.data },
+        });
+        history.push('/dashboard');
+      } else {
+        setData({
+          status: 'error',
+          error: null,
+          user: null,
+        });
+      }
+    } catch (err) {
+      setData({ status: 'error', error: err, user: null });
     }
   };
   const register = () => {}; // register the user
   const logout = () => {
     // remove info on localStorage and clean the user
     auth.logout();
-    setData({ status: 'success', error: null, user: null });
+    setData({ status: 'initial', error: null, user: null });
     history.push('/');
   }; // clear the token in localStorage and the user data
   useEffect(() => {
@@ -36,13 +51,12 @@ export const AuthProvider = (props) => {
       const response = auth.userByToken(token);
       setData({ status: 'success', error: null, user: response });
     } else {
-      setData({ status: 'success', error: null, user: null });
+      setData({ status: 'initial', error: null, user: null });
     }
   }, []);
-
-  if (data.status === 'pending') {
-    return <FullPageSpinner />;
-  }
+  // if (data.status === 'pending') {
+  //   return <FullPageSpinner />;
+  // }
   return (
     <AuthContext.Provider
       value={{ data, login, logout, register }}

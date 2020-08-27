@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput / Styles should test the styled-component InpuText 1`] = `
+.c0 {
+  width: 300px;
+  height: 35px;
+  outline: none;
+  margin-top: 5px;
+  padding: 6px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: var(--white);
+  border: 1px solid var(--grey);
+  border-radius: 8px;
+}
+
+.c0:hover,
+.c0:active,
+.c0:focus {
+  border-color: #DDD888;
+  box-shadow: 0 0 4px #DDD888;
+}
+
+<input
+  className="c0"
+/>
+`;
+
+exports[`TextInput / Styles should test the styled-component LabelText 1`] = `
+.c0 {
+  color: var(--grey);
+}
+
+<label
+  className="c0"
+/>
+`;

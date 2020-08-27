@@ -1,4 +1,4 @@
-import API, { BaseGenpoint } from '.';
+import API, { BaseGendpoint } from '.';
 
 describe('API INSTANCE', () => {
   it('API Defined', () => {
@@ -10,7 +10,7 @@ describe('API INSTANCE', () => {
 });
 
 describe('Enpoints cluster', () => {
-  it('BaseGenpoint Defined', () => {
-    expect(BaseGenpoint).toBeDefined();
+  it('BaseGendpoint Defined', () => {
+    expect(BaseGendpoint).toBeDefined();
   });
 });

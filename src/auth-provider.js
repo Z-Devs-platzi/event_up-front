@@ -21,30 +21,42 @@ function getToken() {
 }
 
 function handleAuthResponse({ token }) {
-  window.sessionStorage.setItem(localStorageKey, token);
-  return token;
+  if (token) {
+    window.sessionStorage.setItem(localStorageKey, token);
+    return token;
+  }
+  throw new Error('No Auth Token');
+}
+function handleAuthError(err) {
+  console.error('handleAuthError', err);
 }
 
-async function login({ username, password }) {
+async function login(email, password) {
   // TODO CHANGE USING https://reqres.in/
-  LogingRequest({
-    path: '',
-    body: {
-      email: 'eve.holt@reqres.in',
-      password: 'cityslicka',
-    },
-    params: {
-      delay: 2,
-    },
-  }).then(handleAuthResponse);
-  let userInfo = await UserRequest({
-    path: '1',
-    body: null,
-    params: {
-      delay: 3,
-    },
-  });
-  return { ...userInfo.data };
+  try {
+    let loginRespone = await LogingRequest({
+      path: '',
+      body: {
+        email,
+        password,
+      },
+      params: {
+        delay: 2,
+      },
+    });
+    handleAuthResponse(loginRespone);
+    let userInfo = await UserRequest({
+      path: '1',
+      body: null,
+      params: {
+        delay: 3,
+      },
+    });
+    return userInfo;
+  } catch (error) {
+    handleAuthError(error);
+    throw error;
+  }
 }
 
 function register({ username, password }) {

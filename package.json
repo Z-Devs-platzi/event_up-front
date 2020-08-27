@@ -74,6 +74,13 @@
   "resolutions": {
     "styled-components": "^5"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/**/*.stories.{js,jsx}",
+      "!<rootDir>/node_modules/"
+    ]
+  },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"

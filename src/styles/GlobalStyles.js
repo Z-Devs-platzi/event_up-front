@@ -65,3 +65,10 @@ export const CenterDiv = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+export const CardDiv = styled.div`
+  background: var(--light-grey-1);
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+  padding: 30px;
+`;

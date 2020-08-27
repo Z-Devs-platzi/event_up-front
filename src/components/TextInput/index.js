@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { InpuText, LabelText } from './styles';
 const TextInput = ({ label, id, type, logical, placeholder, erro }) => {
   return (
-    <>
+    <div>
       <LabelText htmlFor={id}>{label}</LabelText>
       <br />
       <InpuText
@@ -13,7 +13,7 @@ const TextInput = ({ label, id, type, logical, placeholder, erro }) => {
         {...logical}
         placeholder={placeholder}
       />
-    </>
+    </div>
   );
 };
 

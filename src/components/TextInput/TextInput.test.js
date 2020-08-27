@@ -4,12 +4,12 @@ import TextInput from './index';
 
 describe('<TextInput />', () => {
   test('Component render of TextInput', () => {
-    const button = mount(
+    const textInput = mount(
       <TextInput
         id={'input'}
         logical={{ value: 'hello', onChange: () => {} }}
       />
     );
-    expect(button.length).toEqual(1);
+    expect(textInput.length).toEqual(1);
   });
 });

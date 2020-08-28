@@ -11,12 +11,18 @@ import { useCallback, useState } from 'react';
         />
     @returns {Object} {value: String, onChange:Function}
  */
-export const useFormTextField = (initialValue = '') => {
+export const useFormTextField = (initialValue = '', validate = () => '') => {
+  const [error, setError] = useState('');
   const [value, setValue] = useState(initialValue);
-  const onChange = useCallback((e) => {
-    return setValue(e.target.value);
-  }, []);
-  return { value, onChange };
+
+  const onChange = useCallback(
+    (e) => {
+      setError(validate(e.target.value));
+      return setValue(e.target.value);
+    },
+    [validate]
+  );
+  return { value, onChange, error };
 };
 /**
  * 

@@ -1,6 +1,7 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 import { useFormFields, useFormTextField } from './useFormFields';
-
+import { emailValidation } from '../validations';
+import { ERROR_VALID_EMAIL } from '../consts';
 describe('Forms | useFormFields', () => {
   it('useFormFields Defined', () => {
     expect(useFormFields).toBeDefined();
@@ -40,5 +41,19 @@ describe('Forms | useFormTextField', () => {
       result.current.onChange({ target: { value: 'Hello' } });
     });
     expect(result.current.value).toBe('Hello');
+  });
+  it('useFormTextField Change value Validation', () => {
+    const { result } = renderHook(() => useFormTextField('', emailValidation));
+    expect(result.current.value).toBe('');
+    act(() => {
+      result.current.onChange({ target: { value: 'Hello' } });
+    });
+    expect(result.current.value).toBe('Hello');
+    expect(result.current.error).toBe(ERROR_VALID_EMAIL);
+    act(() => {
+      result.current.onChange({ target: { value: 'almero@gmail.com' } });
+    });
+    expect(result.current.value).toBe('almero@gmail.com');
+    expect(result.current.error).toBeFalsy();
   });
 });

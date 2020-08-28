@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import { LabelText, DateInput } from './styles';
 import PropTypes from 'prop-types';
@@ -12,6 +12,11 @@ const CustomField = ({ value, onClick }) => (
 
 const InputDateTime = ({ eventDate, id }) => {
   const [startDate, setStartDate] = useState(eventDate && null);
+
+  useEffect(() => {
+    setStartDate(eventDate);
+  }, [eventDate]);
+
   return (
     <>
       <LabelText htmlFor={id}>Date / Time</LabelText>
@@ -36,12 +41,12 @@ CustomField.propTypes = {
 };
 
 InputDateTime.propTypes = {
-  eventDate: PropTypes.string,
+  eventDate: PropTypes.instanceOf(Date),
   id: PropTypes.string.isRequired,
 };
 
 InputDateTime.defaultProps = {
-  eventDate: new Date(),
+  eventDate: null,
 };
 
 export default InputDateTime;

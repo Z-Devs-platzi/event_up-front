@@ -1,9 +1,10 @@
-import { emailValidation, passwordValidation } from './index';
+import { emailValidation, passwordValidation, matchValidation } from './index';
 import {
   ERROR_VALID_EMAIL,
   ERROR_REQUIRED_EMAIL,
   ERROR_VALID_PW,
   ERROR_REQUIRED_PW,
+  ERROR_MATCH,
 } from '../consts';
 
 describe('Utility Validations Email', () => {
@@ -34,5 +35,17 @@ describe('Utility Validations Password', () => {
   it('should return no erro', () => {
     let str = 'hello World';
     expect(passwordValidation(str)).toBeFalsy();
+  });
+});
+describe('Utility Validations Match', () => {
+  let check = { value: 'Hello World' };
+  const matchMesage = matchValidation(check);
+  it('should return No Match error', () => {
+    let str = '';
+    expect(matchMesage(str)).toBe(ERROR_MATCH);
+  });
+  it('should return No Match error', () => {
+    let str = 'Hello World';
+    expect(matchMesage(str)).toBeFalsy();
   });
 });

@@ -3,8 +3,8 @@ import { Route } from 'react-router';
 import { withRouter } from 'react-router-dom';
 import Landing from '../containers/Landing';
 import SingIn from '../containers/SingIn';
+import Register from '../containers/Register';
 
-const Register = () => <h1>Register</h1>;
 const LandingRoutes = () => (
   <>
     <Route path='/' exact component={Landing} />

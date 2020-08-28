@@ -4,6 +4,7 @@ import {
   ERROR_VALID_EMAIL,
   ERROR_VALID_PW,
   ERROR_REQUIRED_PW,
+  ERROR_MATCH,
 } from '.';
 
 describe('Consts', () => {
@@ -21,5 +22,8 @@ describe('Consts', () => {
   });
   it('ERROR_VALID_EMAIL Defined', () => {
     expect(ERROR_REQUIRED_PW).toBeDefined();
+  });
+  it('ERROR_MATCH Defined', () => {
+    expect(ERROR_MATCH).toBeDefined();
   });
 });

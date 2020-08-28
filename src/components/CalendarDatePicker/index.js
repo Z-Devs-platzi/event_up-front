@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 // import { LabelText } from './InputDateTime.styles';
 import 'react-datepicker/dist/react-datepicker.css';
 
-const CustomField = ({ value, onClick }) => (
+const CustomField = ({ value, onClick, error }) => (
   <DateInput value={value} onClick={onClick} />
 );
 
@@ -38,6 +38,7 @@ const InputDateTime = ({ eventDate, id }) => {
 CustomField.propTypes = {
   value: PropTypes.any,
   onClick: PropTypes.func,
+  error: PropTypes.string,
 };
 
 InputDateTime.propTypes = {

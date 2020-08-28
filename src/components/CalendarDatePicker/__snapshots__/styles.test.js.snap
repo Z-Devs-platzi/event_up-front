@@ -27,6 +27,33 @@ exports[`CalendarDatePicker / Styles should test the styled-component DateInput 
 />
 `;
 
+exports[`CalendarDatePicker / Styles should test the styled-component DateInput Error 1`] = `
+.c0 {
+  width: 300px;
+  height: 35px;
+  outline: none;
+  margin-top: 5px;
+  padding: 6px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: var(--white);
+  border: 1px solid var(--grey);
+  border-radius: 8px;
+}
+
+.c0:hover,
+.c0:active,
+.c0:focus {
+  border-color: var(--error);
+  box-shadow: 0 0 4px var(--error);
+}
+
+<input
+  className="c0"
+/>
+`;
+
 exports[`CalendarDatePicker / Styles should test the styled-component LabelText 1`] = `
 .c0 {
   color: var(--grey);

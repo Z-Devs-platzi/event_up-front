@@ -18,4 +18,13 @@ describe('CalendarDatePicker / Styles', () => {
       modifier: ':hover',
     });
   });
+  it('should test the styled-component DateInput Error', () => {
+    const inputStyles = renderer
+      .create(<DateInput error='Requested' />)
+      .toJSON();
+    expect(inputStyles).toMatchSnapshot();
+    expect(inputStyles).toHaveStyleRule('border-color', 'var(--error)', {
+      modifier: ':focus',
+    });
+  });
 });

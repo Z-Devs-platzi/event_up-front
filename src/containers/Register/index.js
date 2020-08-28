@@ -23,10 +23,26 @@ const Register = () => {
   );
   const orgField = useFormTextField();
   const nameField = useFormTextField();
-
+  const lastField = useFormTextField();
+  const userNameField = useFormTextField();
+  const preparData = () => {
+    let Data = {
+      email: emailField.value,
+      password: passwordField.value,
+      password_confirmation: passwordFieldRepeat.value,
+      organization: orgField.value,
+      first_name: nameField.value,
+      last_name: lastField.value,
+      username: userNameField.value,
+    };
+    return Data;
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    register();
+    if (emailField.error || passwordField.error || passwordFieldRepeat.error) {
+      return;
+    }
+    register(preparData());
   };
 
   return (
@@ -40,6 +56,18 @@ const Register = () => {
                 logical={nameField}
                 type={'text'}
                 id={'SU_name'}
+              />
+              <TextInput
+                label='Last Name'
+                logical={lastField}
+                type={'text'}
+                id={'SU_lastname'}
+              />
+              <TextInput
+                label='User Name'
+                logical={userNameField}
+                type={'text'}
+                id={'SU_Username'}
               />
               <TextInput
                 errorMessage={emailField.error}

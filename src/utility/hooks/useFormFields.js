@@ -38,12 +38,14 @@ export const useFormTextField = (initialValue = '', validate = () => '') => {
           onChange={createChangeHandler("email")}
         />
  */
-export const useFormFields = (initialValues) => {
+export const useFormFields = (initialValues, validations) => {
+  const [errors, setErrors] = useState({});
   const [formFields, setFormFields] = useState(initialValues);
   // custer of handler event
   const createChangeHandler = (key) => (e) => {
     const value = e.target.value;
+    setErrors((prev) => ({ ...prev, [key]: validations[key](value) }));
     setFormFields((prev) => ({ ...prev, [key]: value }));
   };
-  return { formFields, createChangeHandler };
+  return { formFields, createChangeHandler, errors };
 };

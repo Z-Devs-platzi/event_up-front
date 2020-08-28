@@ -7,7 +7,12 @@ describe('Forms | useFormFields', () => {
     expect(useFormFields).toBeDefined();
   });
   it('useFormFields Change values', () => {
-    const { result } = renderHook(() => useFormFields({ email: '', pw: '' }));
+    const { result } = renderHook(() =>
+      useFormFields(
+        { email: '', pw: '' },
+        { email: emailValidation, pw: () => {} }
+      )
+    );
     expect(result.current.formFields).toEqual({ email: '', pw: '' });
     let emailChangeHandler = result.current.createChangeHandler('email');
     expect(typeof emailChangeHandler).toBe('function');
@@ -16,6 +21,7 @@ describe('Forms | useFormFields', () => {
       email: 'lalala@gmai.com',
       pw: '',
     });
+    expect(result.current.errors.email).toBeFalsy();
     let pwChangeHandler = result.current.createChangeHandler('pw');
     expect(typeof pwChangeHandler).toBe('function');
     act(() => pwChangeHandler({ target: { value: 'adminadmin' } }));
@@ -23,6 +29,12 @@ describe('Forms | useFormFields', () => {
       email: 'lalala@gmai.com',
       pw: 'adminadmin',
     });
+    act(() => emailChangeHandler({ target: { value: 'lalala' } }));
+    expect(result.current.formFields).toEqual({
+      email: 'lalala',
+      pw: 'adminadmin',
+    });
+    expect(result.current.errors.email).toBe(ERROR_VALID_EMAIL);
   });
 });
 describe('Forms | useFormTextField', () => {

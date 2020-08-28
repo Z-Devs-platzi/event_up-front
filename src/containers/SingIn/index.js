@@ -7,10 +7,11 @@ import TextInput from '../../components/TextInput';
 import Button from '../../components/Button';
 import Spiner from '../../components/Spiner';
 import LandingWraper from '../../components/LandingWraper';
+import { emailValidation } from '../../utility/validations';
 const SingIn = () => {
   let { login, data } = useAuthState();
 
-  const emailField = useFormTextField();
+  const emailField = useFormTextField('', emailValidation);
   const passwordField = useFormTextField();
 
   const handleSubmit = (e) => {
@@ -24,6 +25,7 @@ const SingIn = () => {
         <form onSubmit={handleSubmit}>
           <CardDiv>
             <CenterDiv>
+              <p>{emailField.error}</p>
               <TextInput
                 label='Email'
                 logical={emailField}

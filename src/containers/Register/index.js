@@ -7,13 +7,20 @@ import TextInput from '../../components/TextInput';
 import Button from '../../components/Button';
 import Spiner from '../../components/Spiner';
 import LandingWraper from '../../components/LandingWraper';
-import { emailValidation, passwordValidation } from '../../utility/validations';
+import {
+  emailValidation,
+  passwordValidation,
+  matchValidation,
+} from '../../utility/validations';
 const Register = () => {
   let { register, data } = useAuthState();
-
   const emailField = useFormTextField('', emailValidation);
   const passwordField = useFormTextField('', passwordValidation);
-  const passwordFieldRepeat = useFormTextField();
+
+  let passwordFieldRepeat = useFormTextField(
+    '',
+    matchValidation(passwordField)
+  );
   const orgField = useFormTextField();
   const nameField = useFormTextField();
 
@@ -56,6 +63,7 @@ const Register = () => {
               />
               <TextInput
                 label='Repeat password'
+                errorMessage={passwordFieldRepeat.error}
                 logical={passwordFieldRepeat}
                 type={'password'}
                 id={'SU_password_Repeat'}

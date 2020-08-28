@@ -31,9 +31,9 @@ export const passwordValidation = (values) => {
  * @param {String} value the value to mathc
  *  matchMesage(pw)
  */
-export const matchValidation = (match) => (value) => {
+export const matchValidation = (object) => (match) => {
   let error = null;
-  if (value !== match) {
+  if (object.value !== match) {
     error = ERROR_MATCH;
   }
   return error;

@@ -38,7 +38,7 @@ describe('Utility Validations Password', () => {
   });
 });
 describe('Utility Validations Match', () => {
-  let check = 'Hello World';
+  let check = { value: 'Hello World' };
   const matchMesage = matchValidation(check);
   it('should return No Match error', () => {
     let str = '';

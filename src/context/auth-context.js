@@ -38,7 +38,9 @@ export const AuthProvider = (props) => {
       setData({ status: 'error', error: err, user: null });
     }
   };
-  const register = () => {}; // register the user
+  const register = () => {
+    console.log('Register on Auth-Context');
+  }; // register the user
   const logout = () => {
     // remove info on localStorage and clean the user
     auth.logout();

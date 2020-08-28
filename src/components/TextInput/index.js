@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { InpuText, LabelText } from './styles';
-const TextInput = ({ label, id, type, logical, placeholder, erro }) => {
+import { InpuText, LabelText, SpanError, InputContainer } from './styles';
+const TextInput = ({ label, id, type, logical, placeholder, errorMessage }) => {
   return (
-    <div>
+    <InputContainer>
       <LabelText htmlFor={id}>{label}</LabelText>
-      <br />
       <InpuText
-        error={erro}
+        error={errorMessage}
         type={type}
         id={id}
         {...logical}
         placeholder={placeholder}
       />
-    </div>
+      <SpanError>{errorMessage}</SpanError>
+    </InputContainer>
   );
 };
 
@@ -21,13 +21,13 @@ TextInput.defaultProps = {
   label: 'Input',
   placeholder: '',
   type: 'text',
-  erro: false,
+  errorMessage: '',
 };
 
 TextInput.propTypes = {
   label: PropTypes.string,
   placeholder: PropTypes.string,
-  erro: PropTypes.bool,
+  errorMessage: PropTypes.string,
   logical: PropTypes.shape({
     value: PropTypes.string,
     onChange: PropTypes.func,

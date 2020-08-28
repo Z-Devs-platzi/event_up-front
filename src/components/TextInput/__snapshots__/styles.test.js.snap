@@ -27,12 +27,40 @@ exports[`TextInput / Styles should test the styled-component InpuText 1`] = `
 />
 `;
 
+exports[`TextInput / Styles should test the styled-component InputContainer 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div
+  className="c0"
+/>
+`;
+
 exports[`TextInput / Styles should test the styled-component LabelText 1`] = `
 .c0 {
   color: var(--grey);
 }
 
 <label
+  className="c0"
+/>
+`;
+
+exports[`TextInput / Styles should test the styled-component SpanError 1`] = `
+.c0 {
+  display: block;
+  height: 20px;
+  color: var(--error);
+}
+
+<span
   className="c0"
 />
 `;

@@ -25,8 +25,8 @@ const SingIn = () => {
         <form onSubmit={handleSubmit}>
           <CardDiv>
             <CenterDiv>
-              <p>{emailField.error}</p>
               <TextInput
+                errorMessage={emailField.error}
                 label='Email'
                 logical={emailField}
                 type={'email'}

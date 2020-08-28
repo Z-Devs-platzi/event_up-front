@@ -1,4 +1,5 @@
 import React from 'react';
+import sha1 from 'js-sha1';
 import { Link } from 'react-router-dom';
 import { CenterDiv, CardDiv } from '../../styles/GlobalStyles';
 import { useAuthState } from '../../context/auth-context';
@@ -28,8 +29,8 @@ const Register = () => {
   const preparData = () => {
     let Data = {
       email: emailField.value,
-      password: passwordField.value,
-      password_confirmation: passwordFieldRepeat.value,
+      password: sha1(passwordField.value),
+      password_confirmation: sha1(passwordFieldRepeat.value),
       organization: orgField.value,
       first_name: nameField.value,
       last_name: lastField.value,

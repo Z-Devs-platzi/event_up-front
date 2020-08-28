@@ -1,4 +1,3 @@
-import sha1 from 'js-sha1';
 import {
   LogingRequest,
   UserRequest,
@@ -34,8 +33,6 @@ function handleAuthError(err) {
 
 async function login(email, password) {
   // TODO CHANGE USING https://reqres.in/
-  console.log('sha PW', sha1(password));
-  // TODO Pass sha1 password
   try {
     let loginRespone = await LogingRequest({
       path: '',
@@ -62,30 +59,16 @@ async function login(email, password) {
   }
 }
 
-async function register({ email, password }) {
+async function register(data) {
   // TODO CHANGE USING https://reqres.in/
-  console.log('sha PW', sha1(password));
-  // TODO Pass sha1 password
+  console.log('register', data);
   try {
     let registerResponse = await RegisterRequest({
       path: '',
-      body: {
-        email,
-        password,
-      },
-      params: {
-        delay: 3,
-      },
-    }).then(async (request) => {
-      let user = await UserRequest({
-        path: '1',
-        body: null,
-        params: {
-          delay: 3,
-        },
-      });
-      return { ...request, user: { ...user.data } };
+      body: { ...data },
+      params: {},
     });
+    console.log('Auth Provider register', registerResponse);
     handleAuthResponse(registerResponse);
     return registerResponse;
   } catch (err) {

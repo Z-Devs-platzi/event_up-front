@@ -4,6 +4,10 @@ import axios from 'axios';
 const API = axios.create({
   baseURL: API_URL,
   timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+  },
 });
 export const BaseGendpoint = (base, verb) => ({
   path = '',

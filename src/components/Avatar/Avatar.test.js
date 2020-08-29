@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import Avatar from '.';
-import { AvatarImage } from './Avatar.styles';
+import { AvatarImage } from './styles';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 

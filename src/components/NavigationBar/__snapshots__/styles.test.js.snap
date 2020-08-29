@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test NavigationBar styled-components should test the styled-component NavigationContainer 1`] = `
+.c0 {
+  position: fixed;
+  width: 248px;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Test NavigationBar styled-components should test the styled-component NavigationHeader 1`] = `
+.c0 {
+  padding: 44px 50px 0;
+  background-color: var(--primary-color);
+}
+
+.c0 .logo {
+  width: 147px;
+}
+
+<header
+  className="c0"
+/>
+`;
+
+exports[`Test NavigationBar styled-components should test the styled-component NavigationMenu 1`] = `
+.c0 {
+  position: relative;
+  height: calc(100vh - 80px);
+  padding: 38px 32px 0;
+  background: var(--gradient-green);
+}
+
+<ul
+  className="c0"
+/>
+`;

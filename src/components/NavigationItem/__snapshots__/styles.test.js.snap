@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test styled-components for the NavigationItem component should test the styled-component file 1`] = `
+.c0 {
+  padding-bottom: 20px;
+}
+
+.c0 .link {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 700;
+  color: var(--white);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 .link .icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.c0 .link:hover {
+  color: var(--secondary-color);
+}
+
+.c0:last-child {
+  position: absolute;
+  bottom: 0;
+}
+
+@media screen and (max-width:900px) {
+  .c0 .link {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .c0 .link .icon {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width:900px) {
+  .c0:last-child {
+    position: relative;
+  }
+}
+
+@media screen and (max-width:900px) {
+  .c0 {
+    padding-bottom: 0;
+  }
+}
+
+<li
+  className="c0"
+/>
+`;

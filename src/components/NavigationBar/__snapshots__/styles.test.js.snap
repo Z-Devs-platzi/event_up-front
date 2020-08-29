@@ -3,7 +3,15 @@
 exports[`Test NavigationBar styled-components should test the styled-component NavigationContainer 1`] = `
 .c0 {
   position: fixed;
+  z-index: 100;
+  height: 100vh;
   width: 248px;
+}
+
+@media screen and (max-width:900px) {
+  .c0 {
+    position: relative;
+  }
 }
 
 <div
@@ -18,7 +26,20 @@ exports[`Test NavigationBar styled-components should test the styled-component N
 }
 
 .c0 .logo {
-  width: 147px;
+  width: 148px;
+}
+
+@media screen and (max-width:900px) {
+  .c0 {
+    width: 100vw;
+    height: 56px;
+    padding: 16px;
+  }
+
+  .c0 .logo {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 <header
@@ -32,6 +53,33 @@ exports[`Test NavigationBar styled-components should test the styled-component N
   height: calc(100vh - 80px);
   padding: 38px 32px 0;
   background: var(--gradient-green);
+}
+
+@media screen and (max-width:900px) {
+  .c0 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: space-around;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: space-around;
+    justify-content: space-around;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100vw;
+    height: 60px;
+    padding: 0 10px;
+    background: var(--primary-color);
+  }
 }
 
 <ul

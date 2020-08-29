@@ -19,10 +19,26 @@ export const Item = styled.li`
     &:hover {
       color: var(--secondary-color);
     }
+
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+
+      & .icon {
+        margin-right: 0;
+      }
+    }
   }
 
   &:last-child {
     position: absolute;
     bottom: 0;
+
+    @media screen and (max-width: 900px) {
+      position: relative;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    padding-bottom: 0;
   }
 `;

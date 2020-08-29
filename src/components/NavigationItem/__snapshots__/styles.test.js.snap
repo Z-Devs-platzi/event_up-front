@@ -35,6 +35,30 @@ exports[`test styled-components for the NavigationItem component should test the
   bottom: 0;
 }
 
+@media screen and (max-width:900px) {
+  .c0 .link {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .c0 .link .icon {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width:900px) {
+  .c0:last-child {
+    position: relative;
+  }
+}
+
+@media screen and (max-width:900px) {
+  .c0 {
+    padding-bottom: 0;
+  }
+}
+
 <li
   className="c0"
 />

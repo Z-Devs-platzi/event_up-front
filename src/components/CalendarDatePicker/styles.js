@@ -1,6 +1,9 @@
 import styled from 'styled-components';
+export const LabelText = styled.label`
+  color: var(--grey);
+`;
 
-export const InpuText = styled.input.attrs((props) => ({
+export const DateInput = styled.input.attrs((props) => ({
   colorFocus: props.error
     ? 'var(--error)'
     : props.colorFocus || 'var(--secondary-color)',
@@ -22,16 +25,4 @@ export const InpuText = styled.input.attrs((props) => ({
     border-color: ${(props) => props.colorFocus};
     box-shadow: 0 0 4px ${(props) => props.colorFocus};
   }
-`;
-export const LabelText = styled.label`
-  color: var(--grey);
-`;
-export const SpanError = styled.span`
-  display: block;
-  height: 20px;
-  color: var(--error);
-`;
-export const InputContainer = styled.div`
-  display: flex;
-  flex-direction: column;
 `;

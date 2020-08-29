@@ -11,12 +11,18 @@ import { useCallback, useState } from 'react';
         />
     @returns {Object} {value: String, onChange:Function}
  */
-export const useFormTextField = (initialValue = '') => {
+export const useFormTextField = (initialValue = '', validate = () => '') => {
+  const [error, setError] = useState('');
   const [value, setValue] = useState(initialValue);
-  const onChange = useCallback((e) => {
-    return setValue(e.target.value);
-  }, []);
-  return { value, onChange };
+
+  const onChange = useCallback(
+    (e) => {
+      setError(validate(e.target.value));
+      return setValue(e.target.value);
+    },
+    [validate]
+  );
+  return { value, onChange, error };
 };
 /**
  * 
@@ -32,12 +38,14 @@ export const useFormTextField = (initialValue = '') => {
           onChange={createChangeHandler("email")}
         />
  */
-export const useFormFields = (initialValues) => {
+export const useFormFields = (initialValues, validations) => {
+  const [errors, setErrors] = useState({});
   const [formFields, setFormFields] = useState(initialValues);
   // custer of handler event
   const createChangeHandler = (key) => (e) => {
     const value = e.target.value;
+    setErrors((prev) => ({ ...prev, [key]: validations[key](value) }));
     setFormFields((prev) => ({ ...prev, [key]: value }));
   };
-  return { formFields, createChangeHandler };
+  return { formFields, createChangeHandler, errors };
 };

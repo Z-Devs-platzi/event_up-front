@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { InlineIcon } from '@iconify/react';
 import { Buttons } from './styles';
 
-const Button = ({ children, buttonType, onClick, icon }) => (
+const Button = ({ children, buttonType, onClick }) => (
   <Buttons buttonType={buttonType} onClick={onClick}>
     {children}
-    {icon && <InlineIcon icon={icon} />}
   </Buttons>
 );
 
@@ -17,8 +15,7 @@ Button.defaultProps = {
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
-  icon: PropTypes.node,
-  buttonType: PropTypes.oneOf(['primary', 'secondary', 'action']),
+  buttonType: PropTypes.oneOf(['primary', 'outline']),
 };
 
 export default Button;

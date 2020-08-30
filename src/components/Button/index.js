@@ -14,7 +14,7 @@ Button.defaultProps = {
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   buttonType: PropTypes.oneOf(['primary', 'outline']),
 };
 

@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Item } from './styles';
 
-const NavigationItem = ({ to, iconItem, label }) => {
+const NavigationItem = ({ to, iconItem, label, click }) => {
   return (
     <Item>
-      <Link to={to} className='link'>
+      <Link to={to} className='link' onClick={click}>
         {iconItem}
         {label}
       </Link>
@@ -15,7 +15,8 @@ const NavigationItem = ({ to, iconItem, label }) => {
 };
 
 NavigationItem.propTypes = {
-  to: PropTypes.node.isRequired,
+  to: PropTypes.string.isRequired,
+  click: PropTypes.func,
   iconItem: PropTypes.node.isRequired,
   label: PropTypes.string.isRequired,
 };

@@ -6,13 +6,18 @@ import Avatar from '../Avatar';
 import { BiEdit } from 'react-icons/bi';
 import Button from '../Button';
 import TextInput from '../TextInput';
-import { useFormTextField } from '../../utility/hooks/useFormFields';
+import FileInput from '../FileInput';
+import {
+  useFormTextField,
+  useFormFileField,
+} from '../../utility/hooks/useFormFields';
 const SponsorItem = ({
   sponsor_name,
   logo_url,
   web_url,
   editState,
   saveSponsor,
+  id,
 }) => {
   let [name, setName] = useState(sponsor_name);
   let [web, setWeb] = useState(web_url);
@@ -20,7 +25,7 @@ const SponsorItem = ({
 
   let nameField = useFormTextField(name);
   const webField = useFormTextField(web_url);
-  const logoField = useFormTextField(logo_url);
+  const logoField = useFormFileField();
 
   const [edit, setEdit] = useState(editState);
   const [cancel, setCancel] = useState(false);
@@ -36,8 +41,8 @@ const SponsorItem = ({
     setEdit(false);
     setName(nameField.value || name);
     setWeb(web_url.value || web);
-    setLogo(logoField.value || logo);
-    saveSponsor({ name, web, logo });
+
+    saveSponsor({ name, web, id, logo: logoField.value, level: 'gold' });
   };
   useEffect(() => {
     setWeb(web_url);
@@ -66,10 +71,10 @@ const SponsorItem = ({
             id={'sponsor_web'}
             logical={webField}
           />
-          <TextInput
-            label={'Logo URL'}
-            id={'sponsor_web'}
+          <FileInput
             logical={logoField}
+            label={'Logo Update'}
+            id={'sponsor_web'}
           />
           <CenterDiv direction='row'>
             <Button buttonType='outline' onClick={cancelHandler}>
@@ -86,9 +91,13 @@ const SponsorItem = ({
 };
 SponsorItem.defaultProps = {
   editState: false,
+  web_url: 'https://github.com/Z-Devs-platzi',
+  sponsor_name: 'Z-devs',
+  logo_url: 'https://avatars1.githubusercontent.com/u/69704720?s=200&v=4',
   saveSponsor: (data) => console.log(data),
 };
 SponsorItem.propTypes = {
+  id: PropTypes.string,
   editState: PropTypes.bool,
   logo_url: PropTypes.string,
   sponsor_name: PropTypes.string,

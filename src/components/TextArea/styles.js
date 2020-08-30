@@ -5,7 +5,7 @@ export const LabelText = styled.label`
   margin-bottom: 0.625rem;
 `;
 
-export const TexareaInput = styled.textarea`
+export const TextareaInput = styled.textarea`
   border: 1px solid var(--grey);
   border-radius: 8px;
   padding: 0.75rem 1rem;

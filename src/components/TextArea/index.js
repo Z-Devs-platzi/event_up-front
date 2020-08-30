@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TexareaInput, LabelText, InputContainer, SpanError } from './styles';
+import { TextareaInput, LabelText, InputContainer, SpanError } from './styles';
 
 const TextArea = ({ label, id, rows, errorMessage }) => {
   return (
     <InputContainer>
       <LabelText htmlFor={id}>{label}</LabelText>
-      <TexareaInput rows={rows}></TexareaInput>
+      <TextareaInput rows={rows}></TextareaInput>
       <SpanError>{errorMessage}</SpanError>
     </InputContainer>
   );

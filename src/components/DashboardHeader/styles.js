@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { BiChevronDown } from 'react-icons/bi';
 
 export const HeaderWrapper = styled.header`
   display: flex;

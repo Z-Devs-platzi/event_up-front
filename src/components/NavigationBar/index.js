@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../assets/event_up_logo.svg';
 import NavigationItem from '../NavigationItem';
+import { useAuthState } from '../../context/auth-context';
 import {
   BiCalendarEvent,
   BiGroup,
@@ -14,6 +15,7 @@ import {
 } from './styles';
 
 const NavigationBar = () => {
+  let { logout } = useAuthState();
   const icons = {
     event: <BiCalendarEvent className='icon' />,
     staff: <BiGroup className='icon' />,
@@ -28,7 +30,7 @@ const NavigationBar = () => {
       to: '/organization',
       iconItem: icons.organization,
     },
-    { label: 'Log Out', to: '/', iconItem: icons.logOut },
+    { label: 'Log Out', click: logout, iconItem: icons.logOut },
   ];
   return (
     <NavigationContainer>

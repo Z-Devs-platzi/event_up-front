@@ -20,19 +20,15 @@ function getToken() {
   return window.sessionStorage.getItem(localStorageKey);
 }
 
-function handleAuthResponse({ token }) {
-  if (token) {
-    window.sessionStorage.setItem(localStorageKey, token);
-    return token;
+function handleAuthResponse({ authToken }) {
+  if (authToken) {
+    window.sessionStorage.setItem(localStorageKey, authToken);
+    return authToken;
   }
   throw new Error('No Auth Token');
 }
-function handleAuthError(err) {
-  console.error('handleAuthError', err);
-}
 
 async function login(email, password) {
-  // TODO CHANGE USING https://reqres.in/
   try {
     let loginRespone = await LogingRequest({
       path: '',
@@ -40,39 +36,24 @@ async function login(email, password) {
         email,
         password,
       },
-      params: {
-        delay: 2,
-      },
+      params: {},
     });
-    handleAuthResponse(loginRespone);
-    let userInfo = await UserRequest({
-      path: '1',
-      body: null,
-      params: {
-        delay: 3,
-      },
-    });
-    return userInfo;
+    handleAuthResponse(loginRespone.data);
+    return loginRespone;
   } catch (error) {
-    handleAuthError(error);
     throw error;
   }
 }
 
 async function register(data) {
-  // TODO CHANGE USING https://reqres.in/
-  console.log('register', data);
   try {
     let registerResponse = await RegisterRequest({
       path: '',
       body: { ...data },
       params: {},
     });
-    console.log('Auth Provider register', registerResponse);
-    handleAuthResponse(registerResponse);
     return registerResponse;
   } catch (err) {
-    handleAuthError(err);
     throw err;
   }
 }

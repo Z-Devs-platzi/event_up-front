@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spiner / Styles SpinerContainer Custom 1`] = `
+.c0 {
+  -webkit-animation: bKPVWD 2s linear infinite;
+  animation: bKPVWD 2s linear infinite;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70px;
+  height: 70px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #A44F44;
+  font-size: 70px;
+}
+
+<div
+  className="c0"
+  color="#A44F44"
+  size={70}
+/>
+`;
+
+exports[`Spiner / Styles SpinerContainer Default 1`] = `
+.c0 {
+  -webkit-animation: bKPVWD 2s linear infinite;
+  animation: bKPVWD 2s linear infinite;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: var(--grey);
+  font-size: 20px;
+}
+
+<div
+  className="c0"
+  color="var(--grey)"
+  size="20"
+/>
+`;

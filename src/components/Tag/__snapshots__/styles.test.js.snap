@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag / Styles should test the styled-component Tag default 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0.25rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+  cursor: default;
+}
+
+<span
+  className="c0"
+/>
+`;
+
+exports[`Tag / Styles should test the styled-component Tag published 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0.25rem 1rem;
+  background-color: var(--published);
+  color: var(--black);
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+  cursor: default;
+}
+
+<span
+  className="c0"
+/>
+`;
+
+exports[`Tag / Styles should test the styled-component Tag published 2`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0.25rem 1rem;
+  background-color: var(--light-green);
+  color: var(--grey);
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+  cursor: default;
+}
+
+<span
+  className="c0"
+/>
+`;

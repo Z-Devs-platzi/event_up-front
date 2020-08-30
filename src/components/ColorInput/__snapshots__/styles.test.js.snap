@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test styled-components for the InputSwatch component should test the styled-component file 1`] = `
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: '#fff';
+  border-radius: 50%;
+  border: 1px solid #808080;
+  boxshadow: var(--shadow);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`test styled-components for the InputSwatch component should test the styled-component file 2`] = `
+.c0 {
+  position: absolute;
+  top: 50px;
+  left: 160px;
+  z-index: 2;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`test styled-components for the InputSwatch component should test the styled-component file 3`] = `
+.c0 {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`test styled-components for the InputSwatch component should test the styled-component file 4`] = `
+.c0 {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`test styled-components for the InputSwatch component should test the styled-component file 5`] = `
+.c0 {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--grey);
+}
+
+<label
+  className="c0"
+/>
+`;
+
+exports[`test styled-components for the InputSwatch component should test the styled-component file 6`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 168px;
+  height: 40px;
+}
+
+<div
+  className="c0"
+/>
+`;

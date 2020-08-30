@@ -1,4 +1,4 @@
-import API from '.';
+import API, { BaseGendpoint } from '.';
 
 describe('API INSTANCE', () => {
   it('API Defined', () => {
@@ -6,5 +6,11 @@ describe('API INSTANCE', () => {
   });
   it('API Timeout 10s', () => {
     expect(API.defaults.timeout).toBe(10000);
+  });
+});
+
+describe('Enpoints cluster', () => {
+  it('BaseGendpoint Defined', () => {
+    expect(BaseGendpoint).toBeDefined();
   });
 });

@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ButtonS } from './styles';
+import { Buttons } from './styles';
 
 const Button = ({ children, buttonType, onClick }) => (
-  <ButtonS buttonType={buttonType} onClick={onClick}>
+  <Buttons buttonType={buttonType} onClick={onClick}>
     {children}
-  </ButtonS>
+  </Buttons>
 );
 
 Button.defaultProps = {
@@ -14,8 +14,8 @@ Button.defaultProps = {
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
-  onClick: PropTypes.func,
-  buttonType: PropTypes.oneOf(['primary', 'secondary']),
+  onClick: PropTypes.func.isRequired,
+  buttonType: PropTypes.oneOf(['primary', 'outline']),
 };
 
 export default Button;

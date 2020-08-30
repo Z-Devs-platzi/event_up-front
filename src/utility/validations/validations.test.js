@@ -1,10 +1,16 @@
-import { emailValidation, passwordValidation, matchValidation } from './index';
+import {
+  emailValidation,
+  passwordValidation,
+  matchValidation,
+  requiredValidation,
+} from './index';
 import {
   ERROR_VALID_EMAIL,
   ERROR_REQUIRED_EMAIL,
   ERROR_VALID_PW,
   ERROR_REQUIRED_PW,
   ERROR_MATCH,
+  ERROR_REQUIRED,
 } from '../consts';
 
 describe('Utility Validations Email', () => {
@@ -47,5 +53,15 @@ describe('Utility Validations Match', () => {
   it('should return No Match error', () => {
     let str = 'Hello World';
     expect(matchMesage(str)).toBeFalsy();
+  });
+});
+describe('Utility Validations Required', () => {
+  it('should return Required error', () => {
+    let str = '';
+    expect(requiredValidation(str)).toBe(ERROR_REQUIRED);
+  });
+  it('should return Required error', () => {
+    let str = 'Hello World';
+    expect(requiredValidation(str)).toBeFalsy();
   });
 });

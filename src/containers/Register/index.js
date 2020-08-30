@@ -12,6 +12,7 @@ import {
   emailValidation,
   passwordValidation,
   matchValidation,
+  requiredValidation,
 } from '../../utility/validations';
 const Register = () => {
   let { register, data } = useAuthState();
@@ -23,14 +24,16 @@ const Register = () => {
     matchValidation(passwordField)
   );
   const orgField = useFormTextField();
-  const nameField = useFormTextField();
-  const userNameField = useFormTextField();
+  const nameField = useFormTextField('', requiredValidation);
+  const lastField = useFormTextField('', requiredValidation);
+  const userNameField = useFormTextField('', requiredValidation);
   const preparData = () => {
     let Data = {
       email: emailField.value,
       password: sha1(passwordField.value),
       organization: orgField.value,
-      name: nameField.value,
+      first_name: nameField.value,
+      last_name: lastField.value,
       username: userNameField.value,
     };
     return Data;
@@ -51,12 +54,21 @@ const Register = () => {
             <CenterDiv>
               <TextInput
                 label='Name'
+                errorMessage={nameField.error}
                 logical={nameField}
                 type={'text'}
                 id={'SU_name'}
               />
               <TextInput
+                label='Last Name'
+                errorMessage={lastField.error}
+                logical={lastField}
+                type={'text'}
+                id={'SU_lastName'}
+              />
+              <TextInput
                 label='User Name'
+                errorMessage={userNameField.error}
                 logical={userNameField}
                 type={'text'}
                 id={'SU_Username'}

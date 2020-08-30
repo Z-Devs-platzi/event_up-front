@@ -1,4 +1,5 @@
 import React from 'react';
+import sha1 from 'js-sha1';
 import { Link } from 'react-router-dom';
 import { CenterDiv, CardDiv } from '../../styles/GlobalStyles';
 import { useAuthState } from '../../context/auth-context';
@@ -16,7 +17,7 @@ const SingIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(emailField.value, passwordField.value);
+    login(emailField.value, sha1(passwordField.value));
   };
 
   return (

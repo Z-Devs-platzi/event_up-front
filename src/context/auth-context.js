@@ -17,14 +17,13 @@ export const AuthProvider = (props) => {
       error: null,
       user: null,
     });
-    // save the info on localStorage and get user
     try {
       const responseUser = await auth.login(user, password);
-      if (responseUser.hasOwnProperty('data')) {
+      if (responseUser.hasOwnProperty('data') && responseUser.status) {
         setData({
           status: 'success',
           error: null,
-          user: { ...responseUser.data },
+          user: { ...responseUser.data.user },
         });
         history.push('/dashboard');
       } else {
@@ -49,10 +48,17 @@ export const AuthProvider = (props) => {
       setData({
         status: 'success',
         error: null,
-        user: responseRegister.user,
+        user: null,
       });
+      // DISPATCH MESSAGE SUCCES Revirew email
+      console.log(
+        '%c Check your email',
+        'background-color: green; color:white;',
+        responseRegister.data.email
+      );
       history.push('/dashboard');
     } catch (err) {
+      console.log('%c Error on', err);
       setData({ status: 'error', error: err, user: null });
     }
   }; // register the user
@@ -71,9 +77,7 @@ export const AuthProvider = (props) => {
       setData({ status: 'initial', error: null, user: null });
     }
   }, []);
-  // if (data.status === 'pending') {
-  //   return <FullPageSpinner />;
-  // }
+
   return (
     <AuthContext.Provider
       value={{ data, login, logout, register }}

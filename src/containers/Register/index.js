@@ -24,16 +24,13 @@ const Register = () => {
   );
   const orgField = useFormTextField();
   const nameField = useFormTextField();
-  const lastField = useFormTextField();
   const userNameField = useFormTextField();
   const preparData = () => {
     let Data = {
       email: emailField.value,
       password: sha1(passwordField.value),
-      password_confirmation: sha1(passwordFieldRepeat.value),
       organization: orgField.value,
-      first_name: nameField.value,
-      last_name: lastField.value,
+      name: nameField.value,
       username: userNameField.value,
     };
     return Data;
@@ -57,12 +54,6 @@ const Register = () => {
                 logical={nameField}
                 type={'text'}
                 id={'SU_name'}
-              />
-              <TextInput
-                label='Last Name'
-                logical={lastField}
-                type={'text'}
-                id={'SU_lastname'}
               />
               <TextInput
                 label='User Name'

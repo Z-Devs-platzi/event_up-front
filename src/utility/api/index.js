@@ -18,6 +18,10 @@ export const BaseGendpoint = (base, verb) => ({
 }) =>
   API[verb](`${base}/${path}`, body, { params })
     .then((response) => response.data)
-    .catch((error) => error);
+    .catch(HandlerError);
 
+const HandlerError = (err) => {
+  let { data } = err.response;
+  throw new Error(data.message);
+};
 export default API;

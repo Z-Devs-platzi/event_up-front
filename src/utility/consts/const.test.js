@@ -5,6 +5,7 @@ import {
   ERROR_VALID_PW,
   ERROR_REQUIRED_PW,
   ERROR_MATCH,
+  ERROR_REQUIRED,
 } from '.';
 
 describe('Consts', () => {
@@ -25,5 +26,8 @@ describe('Consts', () => {
   });
   it('ERROR_MATCH Defined', () => {
     expect(ERROR_MATCH).toBeDefined();
+  });
+  it('ERROR_REQUIRED Defined', () => {
+    expect(ERROR_REQUIRED).toBeDefined();
   });
 });

@@ -89,5 +89,6 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
-  }
+  },
+  "homepage": "https://z-devs-platzi.github.io/event_up-front"
 }

@@ -15,8 +15,8 @@ const NavigationItem = ({ to, iconItem, label, click }) => {
 };
 
 NavigationItem.propTypes = {
-  to: PropTypes.node,
-  click: PropTypes.node,
+  to: PropTypes.string.isRequired,
+  click: PropTypes.func,
   iconItem: PropTypes.node.isRequired,
   label: PropTypes.string.isRequired,
 };

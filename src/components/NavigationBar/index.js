@@ -30,7 +30,7 @@ const NavigationBar = () => {
       to: '/organization',
       iconItem: icons.organization,
     },
-    { label: 'Log Out', click: logout, iconItem: icons.logOut },
+    { label: 'Log Out', to: '/', click: logout, iconItem: icons.logOut },
   ];
   return (
     <NavigationContainer>

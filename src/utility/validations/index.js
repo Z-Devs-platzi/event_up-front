@@ -4,6 +4,7 @@ import {
   ERROR_REQUIRED_PW,
   ERROR_VALID_PW,
   ERROR_MATCH,
+  ERROR_REQUIRED,
 } from '../consts';
 export const emailValidation = (values) => {
   let error = null;
@@ -20,6 +21,13 @@ export const passwordValidation = (values) => {
     error = ERROR_REQUIRED_PW;
   } else if (values.length < 6) {
     error = ERROR_VALID_PW;
+  }
+  return error;
+};
+export const requiredValidation = (values) => {
+  let error = null;
+  if (!values) {
+    error = ERROR_REQUIRED;
   }
   return error;
 };

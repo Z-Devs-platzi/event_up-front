@@ -1,4 +1,3 @@
-import sha1 from 'js-sha1';
 import {
   LogingRequest,
   UserRequest,
@@ -21,21 +20,15 @@ function getToken() {
   return window.sessionStorage.getItem(localStorageKey);
 }
 
-function handleAuthResponse({ token }) {
-  if (token) {
-    window.sessionStorage.setItem(localStorageKey, token);
-    return token;
+function handleAuthResponse({ authToken }) {
+  if (authToken) {
+    window.sessionStorage.setItem(localStorageKey, authToken);
+    return authToken;
   }
   throw new Error('No Auth Token');
 }
-function handleAuthError(err) {
-  console.error('handleAuthError', err);
-}
 
 async function login(email, password) {
-  // TODO CHANGE USING https://reqres.in/
-  console.log('sha PW', sha1(password));
-  // TODO Pass sha1 password
   try {
     let loginRespone = await LogingRequest({
       path: '',
@@ -43,53 +36,24 @@ async function login(email, password) {
         email,
         password,
       },
-      params: {
-        delay: 2,
-      },
+      params: {},
     });
-    handleAuthResponse(loginRespone);
-    let userInfo = await UserRequest({
-      path: '1',
-      body: null,
-      params: {
-        delay: 3,
-      },
-    });
-    return userInfo;
+    handleAuthResponse(loginRespone.data);
+    return loginRespone;
   } catch (error) {
-    handleAuthError(error);
     throw error;
   }
 }
 
-async function register({ email, password }) {
-  // TODO CHANGE USING https://reqres.in/
-  console.log('sha PW', sha1(password));
-  // TODO Pass sha1 password
+async function register(data) {
   try {
     let registerResponse = await RegisterRequest({
       path: '',
-      body: {
-        email,
-        password,
-      },
-      params: {
-        delay: 3,
-      },
-    }).then(async (request) => {
-      let user = await UserRequest({
-        path: '1',
-        body: null,
-        params: {
-          delay: 3,
-        },
-      });
-      return { ...request, user: { ...user.data } };
+      body: { ...data },
+      params: {},
     });
-    handleAuthResponse(registerResponse);
     return registerResponse;
   } catch (err) {
-    handleAuthError(err);
     throw err;
   }
 }

@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextArea / Styles TextArea Styles / InputContainer 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`TextArea / Styles TextArea Styles / LabelText 1`] = `
+.c0 {
+  color: var(--grey);
+  margin-bottom: 0.625rem;
+}
+
+<label
+  className="c0"
+/>
+`;
+
+exports[`TextArea / Styles TextArea Styles / SpanError 1`] = `
+.c0 {
+  display: block;
+  height: 20px;
+  color: var(--error);
+}
+
+<span
+  className="c0"
+/>
+`;
+
+exports[`TextArea / Styles TextArea Styles / TextareaInput 1`] = `
+.c0 {
+  border: 1px solid var(--grey);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  background-color: transparent;
+}
+
+<textarea
+  className="c0"
+/>
+`;

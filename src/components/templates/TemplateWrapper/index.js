@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Wrapper } from './styles';
 
-const TemplateWrapper = ({ theme }) => (
+const TemplateWrapper = ({ theme, children }) => (
   <Wrapper
     primary={theme.primary}
     secondary={theme.secondary}
@@ -10,7 +10,7 @@ const TemplateWrapper = ({ theme }) => (
     compB={theme.compB}
     font={theme.font}
   >
-    Aqui los componentes
+    {children}
   </Wrapper>
 );
 

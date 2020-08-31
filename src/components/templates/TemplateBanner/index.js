@@ -12,6 +12,7 @@ import {
   DateWraper,
   EventInfo,
 } from './styles';
+import { format } from 'date-fns';
 
 const TemplateBanner = (props) => {
   const goToEditMode = () => {
@@ -32,7 +33,7 @@ const TemplateBanner = (props) => {
         <BannerTitle>{props.bannerTitle}</BannerTitle>
         <DateWraper>
           <BiCalendarEvent />
-          {props.eventDate}
+          {format(new Date(props.eventDate), 'MMM dd, yyyy / HH:mm')}
         </DateWraper>
         <EventInfo>{props.eventDescription}</EventInfo>
         <Button>Regiter Now</Button>
@@ -46,7 +47,7 @@ TemplateBanner.propTypes = {
   bannerBg: PropTypes.string,
   bannerTitle: PropTypes.string,
   eventDescription: PropTypes.string,
-  eventDate: PropTypes.instanceOf(Date),
+  eventDate: PropTypes.string,
 };
 
 export default TemplateBanner;

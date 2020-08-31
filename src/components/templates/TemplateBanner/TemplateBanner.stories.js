@@ -30,7 +30,7 @@ Default.args = {
   bannerTitle: 'Amet minim mollit non deserunt',
   eventDescription:
     'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-  eventDate: 'aug 21, 2020 / 10:30',
+  eventDate: '2012-09-25T06:00:00-05:00',
 };
 Default.parameters = {
   controls: { hideNoControlsWarning: false },

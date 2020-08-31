@@ -36,7 +36,9 @@ const TemplateBanner = (props) => {
           {format(new Date(props.eventDate), 'MMM dd, yyyy / HH:mm')}
         </DateWraper>
         <EventInfo>{props.eventDescription}</EventInfo>
-        <Button>Regiter Now</Button>
+        <a href='#registerForm'>
+          <Button>Regiter Now</Button>
+        </a>
       </InfoContainer>
     </BannerWrapper>
   );

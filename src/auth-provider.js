@@ -18,12 +18,12 @@ async function userByToken(token) {
   return userInfo;
 }
 function getToken() {
-  return window.sessionStorage.getItem(localStorageKey);
+  return window.localStorage.getItem(localStorageKey);
 }
 
 function handleAuthResponse({ authToken }) {
   if (authToken) {
-    window.sessionStorage.setItem(localStorageKey, authToken);
+    window.localStorage.setItem(localStorageKey, authToken);
     return authToken;
   }
   throw new Error('No Auth Token');
@@ -60,7 +60,7 @@ async function register(data) {
 }
 
 function logout() {
-  window.sessionStorage.removeItem(localStorageKey);
+  window.localStorage.removeItem(localStorageKey);
 }
 
 export { getToken, login, register, logout, localStorageKey, userByToken };

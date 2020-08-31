@@ -24,8 +24,4 @@ TemplateWrapper.propTypes = {
   }),
 };
 
-TemplateWrapper.defaultProps = {
-  // bla: 'test',
-};
-
 export default TemplateWrapper;

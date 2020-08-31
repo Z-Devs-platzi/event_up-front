@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.main`
   --template-color-primary: ${(props) => props.primary};
-  --template-secondary: ${(props) => props.secondary};
-  --template-compA: ${(props) => props.compA};
-  --template-compB: ${(props) => props.compB};
+  --template-color-secondary: ${(props) => props.secondary};
+  --template-color-compA: ${(props) => props.compA};
+  --template-color-compB: ${(props) => props.compB};
   --template-font: ${(props) => props.font};
 `;

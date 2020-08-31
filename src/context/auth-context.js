@@ -69,13 +69,19 @@ export const AuthProvider = (props) => {
     history.push('/');
   }; // clear the token in localStorage and the user data
   useEffect(() => {
+    async function fetchData(token) {
+      const response = await auth.userByToken(token);
+      console.log('Auth provider', response);
+      setData({ status: 'success', error: null, user: response.data });
+      history.push('/dashboard');
+    }
     let token = auth.getToken();
     if (token) {
-      const response = auth.userByToken(token);
-      setData({ status: 'success', error: null, user: response });
+      fetchData(token);
     } else {
       setData({ status: 'initial', error: null, user: null });
     }
+    // eslint-disable-next-line
   }, []);
 
   return (

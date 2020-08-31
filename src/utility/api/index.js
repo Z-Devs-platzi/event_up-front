@@ -1,28 +1,37 @@
 import { API_URL } from '../consts';
 import axios from 'axios';
-
+const DEFAULT_HEADER = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Credentials': true,
+  'Content-Type': 'application/json',
+};
 const API = axios.create({
   baseURL: API_URL,
   timeout: 10000,
   mode: 'cors',
-  header: {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Credentials': true,
-    'Content-Type': 'application/json',
-  },
+  header: DEFAULT_HEADER,
 });
-export const BaseGendpoint = (
-  base,
-  verb,
-  conent_type = 'application/json'
-) => ({ path = '', body = null, params }) =>
-  API[verb](`${base}/${path}`, body, {
+export const BaseGendpoint = (base, verb, customHeader = DEFAULT_HEADER) => ({
+  path = '',
+  body = null,
+  params,
+  headers = customHeader,
+}) => {
+  if (verb !== 'get') {
+    return API[verb](`${base}/${path}`, body, {
+      params,
+      header: headers,
+    })
+      .then((response) => response.data)
+      .catch(HandlerError);
+  }
+  return API[verb](`${base}/${path}`, {
     params,
-    header: { 'Content-Type': conent_type },
+    headers,
   })
     .then((response) => response.data)
     .catch(HandlerError);
-
+};
 const HandlerError = (err) => {
   let { data } = err.response;
   throw new Error(data.message);

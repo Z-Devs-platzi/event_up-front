@@ -8,21 +8,22 @@ const localStorageKey = '__event_up_auth_provider_token__';
 async function userByToken(token) {
   // TODO CHANGE USING https://reqres.in/
   let userInfo = await UserRequest({
-    path: '1',
+    path: '',
     body: null,
-    params: {
-      delay: 2,
+    params: {},
+    headers: {
+      Authorization: `Token ${token}`,
     },
   });
   return userInfo;
 }
 function getToken() {
-  return window.sessionStorage.getItem(localStorageKey);
+  return window.localStorage.getItem(localStorageKey);
 }
 
 function handleAuthResponse({ authToken }) {
   if (authToken) {
-    window.sessionStorage.setItem(localStorageKey, authToken);
+    window.localStorage.setItem(localStorageKey, authToken);
     return authToken;
   }
   throw new Error('No Auth Token');
@@ -59,7 +60,7 @@ async function register(data) {
 }
 
 function logout() {
-  window.sessionStorage.removeItem(localStorageKey);
+  window.localStorage.removeItem(localStorageKey);
 }
 
 export { getToken, login, register, logout, localStorageKey, userByToken };

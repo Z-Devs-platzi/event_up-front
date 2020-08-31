@@ -40,9 +40,15 @@ const SponsorItem = ({
   const saveHandler = () => {
     setEdit(false);
     setName(nameField.value || name);
-    setWeb(web_url.value || web);
+    setWeb(webField.value || web);
 
-    saveSponsor({ name, web, id, logo: logoField.value, level: 'gold' });
+    saveSponsor({
+      name: nameField.value,
+      web: webField.value,
+      id,
+      logo: logoField.value,
+      level: 'gold',
+    });
   };
   useEffect(() => {
     setWeb(web_url);

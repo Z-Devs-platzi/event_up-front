@@ -8,6 +8,7 @@ export const NavigationContainer = styled.div`
 
   @media screen and (max-width: 900px) {
     position: relative;
+    width: 0px;
   }
 `;
 

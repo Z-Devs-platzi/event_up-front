@@ -8,7 +8,7 @@ export const CountTimer = styled.span.attrs((props) => ({
   opacity: 1;
   font-weight: 800;
   color: ${(props) => props.color};
-  font-family: IBM Plex Sans;
+  font-family: var(--font);
   font-size: ${(props) => `${props.size}px`};
   font-style: normal;
   font-weight: bold;
@@ -20,7 +20,7 @@ export const SimpleLavel = styled.p.attrs((props) => ({
   color: props.color ? props.color : 'var(--light-green)',
   size: props.size ? props.size : '23',
 }))`
-  font-family: IBM Plex Sans;
+  font-family: var(--font);
   font-style: normal;
   font-weight: bold;
   font-size: ${(props) => `${props.size}px`};

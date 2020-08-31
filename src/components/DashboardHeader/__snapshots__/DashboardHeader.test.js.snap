@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DashboardHeader / Styles DashboardHeader Styles / HeaderTitle 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: 1rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+<h3
+  className="c0"
+/>
+`;
+
+exports[`DashboardHeader / Styles DashboardHeader Styles / HeaderWrapper 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 1.25rem 1rem;
+  background-color: var(--light-green);
+}
+
+<header
+  className="c0"
+/>
+`;

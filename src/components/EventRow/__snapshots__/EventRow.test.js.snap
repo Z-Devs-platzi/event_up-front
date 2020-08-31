@@ -1,0 +1,325 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventRow / Styles EventRow Styles / Default 1`] = `
+.c1 {
+  --size: 44px;
+  display: block;
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--grey);
+  border-radius: 50%;
+  object-fit: cover;
+  border: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0.25rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+  cursor: default;
+}
+
+.c0 {
+  display: grid;
+  grid-template-columns: 44px 3fr 1fr 90px 80px;
+  grid-gap: 20px;
+  place-items: center;
+  height: 92px;
+  padding: 0 20px;
+  font-weight: 600;
+  background-color: var(--light-grey-1);
+  border-radius: 8px;
+}
+
+.c0 .Row__avatar {
+  grid-column: 1 / span 1;
+}
+
+.c0 .Row__title {
+  grid-column: 2 / span 1;
+  justify-self: start;
+}
+
+.c0 .Row__title .name {
+  margin-bottom: 8px;
+}
+
+.c0 .Row__title .update-time {
+  font-size: 0.75rem;
+  color: var(--grey);
+}
+
+.c0 .Row__date {
+  grid-column: 3 / span 1;
+  justify-self: start;
+}
+
+.c0 .Row__date .date {
+  margin-bottom: 8px;
+}
+
+.c0 .Row__date .time {
+  font-size: 0.75rem;
+  color: var(--grey);
+}
+
+.c0 .Row__status {
+  grid-column: 4 / span 1;
+  justify-self: end;
+}
+
+.c0 .Row__options {
+  grid-column: 5 / span 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .Row__options li {
+  padding: 0 1px;
+}
+
+.c0 .Row__options li .action {
+  display: block;
+  font-size: 0;
+  color: var(--black);
+}
+
+.c0 .Row__options li .action:hover {
+  color: var(--secondary-color);
+}
+
+.c0 .Row__options li .action .icon {
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (max-width:570px) {
+  .c0 {
+    grid-template-columns: 44px 1fr 80px;
+    grid-template-rows: 24px 1fr 22px 24px;
+    grid-gap: 10px;
+    place-items: initial;
+    height: initial;
+    margin-bottom: 20px;
+    padding: 10px 10px 15px 15px;
+  }
+
+  .c0 .Row__avatar {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+  }
+
+  .c0 .Row__title {
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 1;
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--light-grey-2);
+  }
+
+  .c0 .Row__date {
+    grid-column: 2 / span 2;
+    grid-row: 3 / span 1;
+  }
+
+  .c0 .Row__date .date {
+    display: inline-block;
+    width: 130px;
+    margin-bottom: 0;
+  }
+
+  .c0 .Row__date .time {
+    display: inline;
+  }
+
+  .c0 .Row__status {
+    grid-column: 2 / span 2;
+    grid-row: 4 / span 1;
+    justify-self: start;
+  }
+
+  .c0 .Row__options {
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 1;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="Row__avatar"
+  >
+    <img
+      alt="Event name"
+      className="c1"
+      size="44px"
+      src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
+    />
+  </div>
+  <div
+    className="Row__title"
+  >
+    <div
+      className="name"
+    >
+      Event name
+    </div>
+    <div
+      className="update-time"
+    >
+      Last update
+    </div>
+  </div>
+  <div
+    className="Row__date"
+  >
+    <div
+      className="date"
+    >
+      Aug 30, 2020
+    </div>
+    <div
+      className="time"
+    >
+      11:59 PM
+    </div>
+  </div>
+  <div
+    className="Row__status"
+  >
+    <span
+      className="c2"
+    >
+      draft
+    </span>
+  </div>
+  <ul
+    className="Row__options"
+  >
+    <li>
+      <a
+        className="action"
+        href="#/edit"
+        onClick={[Function]}
+      >
+        <svg
+          className="icon"
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19,4h-3V2h-2v2h-4V2H8v2H5C3.897,4,3,4.897,3,6v14c0,1.103,0.897,2,2,2h14c1.103,0,2-0.897,2-2V6C21,4.897,20.103,4,19,4z M5,20V7h3h2h4h2h3V6l0.002,14H5z"
+          />
+          <path
+            d="M14.142 9.628H16.686999999999998V11.567H14.142z"
+            transform="rotate(-135.016 15.414 10.598)"
+          />
+          <path
+            d="M8.005 16.201L8.005 18 9.804 18 14.78 13.03 12.981 11.231z"
+          />
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a
+        className="action"
+        href="#/delete"
+        onClick={[Function]}
+      >
+        <svg
+          className="icon"
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8.293 16.293L9.707 17.707 12 15.414 14.293 17.707 15.707 16.293 13.414 14 15.707 11.707 14.293 10.293 12 12.586 9.707 10.293 8.293 11.707 10.586 14z"
+          />
+          <path
+            d="M19,4h-2V2h-2v2H9V2H7v2H5C3.897,4,3,4.897,3,6v2v12c0,1.103,0.897,2,2,2h14c1.103,0,2-0.897,2-2V8V6 C21,4.897,20.103,4,19,4z M19.002,20H5V8h14L19.002,20z"
+          />
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a
+        className="action"
+        href="#/publish"
+        onClick={[Function]}
+      >
+        <svg
+          className="icon"
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M13 3L16.293 6.293 9.293 13.293 10.707 14.707 17.707 7.707 21 11 21 3z"
+          />
+          <path
+            d="M19,19H5V5h7l-2-2H5C3.897,3,3,3.897,3,5v14c0,1.103,0.897,2,2,2h14c1.103,0,2-0.897,2-2v-5l-2-2V19z"
+          />
+        </svg>
+      </a>
+    </li>
+  </ul>
+</div>
+`;

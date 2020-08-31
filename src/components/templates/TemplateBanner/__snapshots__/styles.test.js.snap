@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`templates / Banner templateCoundown BannerTitle 1`] = `
+.c0 {
+  margin-bottom: 1rem;
+  font-family: var(--template-font);
+  font-size: 4.5rem;
+  text-align: center;
+  line-height: 4.5rem;
+}
+
+@media (max-width:480px) {
+  .c0 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+}
+
+<h1
+  className="c0"
+/>
+`;
+
+exports[`templates / Banner templateCoundown BannerWrapper 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 70vh;
+  background-color: var(--grey);
+  overflow: hidden;
+}
+
+@media (max-width:480px) {
+  .c0 {
+    height: 100vh;
+  }
+}
+
+<section
+  className="c0"
+/>
+`;
+
+exports[`templates / Banner templateCoundown DateWraper 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--template-color-primary);
+  text-transform: uppercase;
+}
+
+@media (max-width:480px) {
+  .c0 {
+    font-size: 1.25rem;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`templates / Banner templateCoundown EditionTools 1`] = `
+.c0 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`templates / Banner templateCoundown EventInfo 1`] = `
+.c0 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+<p
+  className="c0"
+/>
+`;
+
+exports[`templates / Banner templateCoundown ImageContainer 1`] = `
+.c0 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-image: url();
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`templates / Banner templateCoundown InfoContainer 1`] = `
+.c0 {
+  position: relative;
+  z-index: 3;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--white);
+  width: 80vw;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`templates / Banner templateCoundown OverlayLayer 1`] = `
+.c0 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.5;
+  z-index: 2;
+  background: linear-gradient( 180deg, rgba(18,94,104,1) 0%, rgba(255,212,59,1) 152% );
+  background-blend-mode: overlay;
+  width: 100vw;
+  height: 100%;
+}
+
+<div
+  className="c0"
+/>
+`;

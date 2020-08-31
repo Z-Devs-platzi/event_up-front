@@ -8,10 +8,11 @@ const localStorageKey = '__event_up_auth_provider_token__';
 async function userByToken(token) {
   // TODO CHANGE USING https://reqres.in/
   let userInfo = await UserRequest({
-    path: '1',
+    path: '',
     body: null,
-    params: {
-      delay: 2,
+    params: {},
+    headers: {
+      Authorization: `Token ${token}`,
     },
   });
   return userInfo;

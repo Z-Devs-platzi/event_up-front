@@ -11,12 +11,15 @@ const API = axios.create({
     'Content-Type': 'application/json',
   },
 });
-export const BaseGendpoint = (base, verb) => ({
-  path = '',
-  body = null,
-  params,
-}) =>
-  API[verb](`${base}/${path}`, body, { params })
+export const BaseGendpoint = (
+  base,
+  verb,
+  conent_type = 'application/json'
+) => ({ path = '', body = null, params }) =>
+  API[verb](`${base}/${path}`, body, {
+    params,
+    header: { 'Content-Type': conent_type },
+  })
     .then((response) => response.data)
     .catch(HandlerError);
 

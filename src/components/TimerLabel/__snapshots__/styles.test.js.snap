@@ -6,7 +6,7 @@ exports[`TimerLabel / Styles CountTimer Custom 1`] = `
   opacity: 1;
   font-weight: 800;
   color: #A44F44;
-  font-family: IBM Plex Sans;
+  font-family: var(--font);
   font-size: 70px;
   font-style: normal;
   font-weight: bold;
@@ -27,7 +27,7 @@ exports[`TimerLabel / Styles CountTimer Default 1`] = `
   opacity: 1;
   font-weight: 800;
   color: var(--secondary-color);
-  font-family: IBM Plex Sans;
+  font-family: var(--font);
   font-size: 96px;
   font-style: normal;
   font-weight: bold;
@@ -44,7 +44,7 @@ exports[`TimerLabel / Styles CountTimer Default 1`] = `
 
 exports[`TimerLabel / Styles SimpleLavel Custom 1`] = `
 .c0 {
-  font-family: IBM Plex Sans;
+  font-family: var(--font);
   font-style: normal;
   font-weight: bold;
   font-size: 10px;
@@ -62,7 +62,7 @@ exports[`TimerLabel / Styles SimpleLavel Custom 1`] = `
 
 exports[`TimerLabel / Styles SimpleLavel Default 1`] = `
 .c0 {
-  font-family: IBM Plex Sans;
+  font-family: var(--font);
   font-style: normal;
   font-weight: bold;
   font-size: 23px;

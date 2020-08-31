@@ -24,6 +24,15 @@ export const useFormTextField = (initialValue = '', validate = () => '') => {
   );
   return { value, onChange, error };
 };
+export const useFormFileField = () => {
+  const [value, setValue] = useState();
+
+  const onChange = useCallback((e) => {
+    return setValue(e.target.files[0]);
+  }, []);
+  return { value, onChange };
+};
+
 /**
  * 
  * @param {Object} initialValues 

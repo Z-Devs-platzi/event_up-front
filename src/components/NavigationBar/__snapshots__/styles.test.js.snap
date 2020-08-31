@@ -11,6 +11,7 @@ exports[`Test NavigationBar styled-components should test the styled-component N
 @media screen and (max-width:900px) {
   .c0 {
     position: relative;
+    width: 0px;
   }
 }
 

@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/event_up-front/static/css/main.51159667.chunk.css",
-    "main.js": "/event_up-front/static/js/main.6f91784c.chunk.js",
-    "main.js.map": "/event_up-front/static/js/main.6f91784c.chunk.js.map",
+    "main.js": "/event_up-front/static/js/main.da31c617.chunk.js",
+    "main.js.map": "/event_up-front/static/js/main.da31c617.chunk.js.map",
     "runtime-main.js": "/event_up-front/static/js/runtime-main.8a70b367.js",
     "runtime-main.js.map": "/event_up-front/static/js/runtime-main.8a70b367.js.map",
     "static/js/2.b917614f.chunk.js": "/event_up-front/static/js/2.b917614f.chunk.js",
     "static/js/2.b917614f.chunk.js.map": "/event_up-front/static/js/2.b917614f.chunk.js.map",
     "index.html": "/event_up-front/index.html",
-    "precache-manifest.780529ed7e10c259b7d6baed7916678a.js": "/event_up-front/precache-manifest.780529ed7e10c259b7d6baed7916678a.js",
+    "precache-manifest.0ba399affb987d21f62131871ea0b761.js": "/event_up-front/precache-manifest.0ba399affb987d21f62131871ea0b761.js",
     "service-worker.js": "/event_up-front/service-worker.js",
     "static/css/main.51159667.chunk.css.map": "/event_up-front/static/css/main.51159667.chunk.css.map",
     "static/js/2.b917614f.chunk.js.LICENSE.txt": "/event_up-front/static/js/2.b917614f.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.8a70b367.js",
     "static/js/2.b917614f.chunk.js",
     "static/css/main.51159667.chunk.css",
-    "static/js/main.6f91784c.chunk.js"
+    "static/js/main.da31c617.chunk.js"
   ]
 }

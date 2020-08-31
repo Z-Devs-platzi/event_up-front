@@ -11,16 +11,15 @@ const API = axios.create({
   mode: 'cors',
   header: DEFAULT_HEADER,
 });
-export const BaseGendpoint = (base, verb, customHeader = DEFAULT_HEADER) => ({
-  path = '',
-  body = null,
-  params,
-  headers = customHeader,
-}) => {
+export const BaseGendpoint = (
+  base,
+  verb,
+  headers = { header: DEFAULT_HEADER }
+) => ({ path = '', body = null, params, headers }) => {
   if (verb !== 'get') {
     return API[verb](`${base}/${path}`, body, {
       params,
-      header: headers,
+      headers,
     })
       .then((response) => response.data)
       .catch(HandlerError);

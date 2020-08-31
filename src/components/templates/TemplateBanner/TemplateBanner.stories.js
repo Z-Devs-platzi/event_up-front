@@ -2,11 +2,21 @@ import React from 'react';
 
 import TemplateBanner from '.';
 import { GlobalStyle } from '../../../styles/GlobalStyles';
+import TemplateWrapper from '../TemplateWrapper';
 const Story = (args) => {
+  const theme = {
+    font: 'Arial',
+    primary: '#FFD43B',
+    secondary: '#125E68',
+    compA: '#DBE7E8',
+    compB: '#CDCDCD',
+  };
   return (
     <>
-      <GlobalStyle />
-      <TemplateBanner {...args} />
+      <TemplateWrapper theme={theme}>
+        <GlobalStyle />
+        <TemplateBanner {...args} />
+      </TemplateWrapper>
     </>
   );
 };
@@ -20,6 +30,7 @@ Default.args = {
   bannerTitle: 'Amet minim mollit non deserunt',
   eventDescription:
     'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
+  eventDate: 'aug 21, 2020 / 10:30',
 };
 Default.parameters = {
   controls: { hideNoControlsWarning: false },

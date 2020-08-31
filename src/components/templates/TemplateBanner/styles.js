@@ -6,9 +6,12 @@ export const BannerWrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 60vh;
+  height: 70vh;
   background-color: var(--grey);
   overflow: hidden;
+  @media (max-width: 480px) {
+    height: 100vh;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -37,8 +40,8 @@ export const OverlayLayer = styled.div`
   z-index: 2;
   background: linear-gradient(
     180deg,
-    rgba(18, 94, 104, 0.85) 0%,
-    rgba(255, 212, 59, 0.13) 152%
+    rgba(18, 94, 104, 1) 0%,
+    rgba(255, 212, 59, 1) 152%
   );
   background-blend-mode: overlay;
   width: 100vw;
@@ -53,10 +56,42 @@ export const InfoContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
+  color: var(--white);
+  width: 80vw;
 `;
 
 export const EditionTools = styled.div`
   position: absolute;
   top: 0;
   right: 0;
+`;
+
+export const BannerTitle = styled.h1`
+  margin-bottom: 1rem;
+  font-family: var(--template-font);
+  font-size: 4.5rem;
+  text-align: center;
+  line-height: 4.5rem;
+  @media (max-width: 480px) {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+`;
+
+export const DateWraper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--template-color-primary);
+  text-transform: uppercase;
+  @media (max-width: 480px) {
+    font-size: 1.25rem;
+  }
+`;
+
+export const EventInfo = styled.p`
+  margin-bottom: 1rem;
+  text-align: center;
 `;

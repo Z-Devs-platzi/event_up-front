@@ -1,22 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BiPlusCircle } from 'react-icons/bi';
+import PropTypes from 'prop-types';
 import Button from '../Button';
 import SponsorItem from '../SponsorItem';
 import { CardDiv } from '../../styles/GlobalStyles';
 import { CrateSponsorRequest } from '../../utility/enpoints/sponsors';
 import * as auth from '../../auth-provider';
-const SponsorsForm = () => {
+const SponsorsForm = ({ sponsors }) => {
   let [showForm, steSwoForm] = useState(false);
-  let [sponsorsItems, setSponsors] = useState([{}]);
+  let [sponsorsItems, setSponsors] = useState(sponsors);
 
   const handlerClick = () => {
     setSponsors([{}, ...sponsorsItems]);
     steSwoForm(true);
   };
+
+  useEffect(() => {
+    setSponsors(sponsors);
+  }, [sponsors]);
+
   const SaveSomeSponsor = async (sponsor_edit) => {
     let token = auth.getToken();
 
-    if (!sponsor_edit.id) {
+    if (!sponsor_edit.pk) {
       console.log('SaveSomeSponsor', sponsor_edit);
       const formData = new FormData();
       formData.append('name', sponsor_edit.name);
@@ -47,6 +53,7 @@ const SponsorsForm = () => {
         return (
           <SponsorItem
             key={`${item.pk} ${i}`}
+            pk={item.pk}
             web_url={item.web}
             sponsor_name={item.name}
             logo_url={item.logo}
@@ -59,4 +66,11 @@ const SponsorsForm = () => {
   );
 };
 
+SponsorsForm.defaultProps = {
+  sponsors: [{}],
+};
+
+SponsorsForm.propTypes = {
+  sponsors: PropTypes.array,
+};
 export default SponsorsForm;

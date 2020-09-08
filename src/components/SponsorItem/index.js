@@ -17,7 +17,7 @@ const SponsorItem = ({
   web_url,
   editState,
   saveSponsor,
-  id,
+  pk,
 }) => {
   let [name, setName] = useState(sponsor_name);
   let [web, setWeb] = useState(web_url);
@@ -45,7 +45,7 @@ const SponsorItem = ({
     saveSponsor({
       name: nameField.value,
       web: webField.value,
-      id,
+      pk,
       logo: logoField.value,
       level: 'gold',
     });

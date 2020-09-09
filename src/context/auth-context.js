@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import * as auth from '../auth-provider';
 import { useHistory } from 'react-router-dom';
+import Spiner from '../components/Spiner';
+import { CenterDiv } from '../styles/GlobalStyles';
 
 const AuthContext = React.createContext();
 export const AuthProvider = (props) => {
@@ -84,6 +86,13 @@ export const AuthProvider = (props) => {
     // eslint-disable-next-line
   }, []);
 
+  if (data.status === 'pending') {
+    return (
+      <CenterDiv>
+        <Spiner color={'#ffd43b'} size={100} />
+      </CenterDiv>
+    );
+  }
   return (
     <AuthContext.Provider
       value={{ data, login, logout, register }}

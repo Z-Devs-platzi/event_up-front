@@ -4,7 +4,17 @@ import PropTypes from 'prop-types';
 import AppWrapper from '../components/AppWrapper';
 import Home from '../containers/Home';
 import PrivateRoute from './PrivateRoute';
-
+import EventForms from '../containers/EventForms';
+import { EventProvider } from '../context/event-context';
+const EventRender = () => {
+  return (
+    <AppWrapper>
+      <EventProvider>
+        <EventForms />
+      </EventProvider>
+    </AppWrapper>
+  );
+};
 const events = () => (
   <AppWrapper>
     <h3>EVETNS</h3>
@@ -34,6 +44,12 @@ const AppRoutes = ({ authAndUser }) => {
         authed={authAndUser}
         path='/events'
         component={events}
+      />
+      <PrivateRoute
+        exact
+        authed={authAndUser}
+        path='/event/:eventname?'
+        component={EventRender}
       />
       <PrivateRoute
         exact

@@ -39,15 +39,7 @@ export const EventProvider = (props) => {
         comment: '',
       },
     },
-    sponsors: [
-      {
-        id: '',
-        name: '',
-        level: '',
-        web: '',
-        logo: '',
-      },
-    ],
+    sponsors: [],
     schedule: [
       {
         id: '',
@@ -88,15 +80,7 @@ export const EventProvider = (props) => {
           comment: '',
         },
       },
-      sponsors: [
-        {
-          id: '',
-          name: '',
-          level: '',
-          web: '',
-          logo: '',
-        },
-      ],
+      sponsors: [],
       schedule: [
         {
           id: '',

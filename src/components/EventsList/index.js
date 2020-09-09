@@ -5,9 +5,12 @@ import { Link } from 'react-router-dom';
 import Button from '../Button';
 import { CenterDiv } from '../../styles/GlobalStyles';
 const EventsList = ({ rows }) => {
-  if (rows.length) {
-    return (
-      <section>
+  return (
+    <CenterDiv>
+      <>
+        <Button>
+          <Link to={'/event'}>Create New Event</Link>
+        </Button>
         {rows.map((item) => {
           return (
             <EventRow
@@ -18,17 +21,9 @@ const EventsList = ({ rows }) => {
             />
           );
         })}
-      </section>
-    );
-  } else {
-    return (
-      <CenterDiv>
-        <Button>
-          <Link to={'/event'}>Create New Event</Link>
-        </Button>
-      </CenterDiv>
-    );
-  }
+      </>
+    </CenterDiv>
+  );
 };
 EventsList.propTypes = {
   rows: PropTypes.array,

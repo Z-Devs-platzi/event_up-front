@@ -1,6 +1,6 @@
 import React from 'react';
 import AppWrapper from '../../components/AppWrapper';
-import EventRow from '../../components/EventRow';
+import EventsList from '../../components/EventsList';
 import Spiner from '../../components/Spiner';
 import { CenterDiv } from '../../styles/GlobalStyles';
 
@@ -30,18 +30,7 @@ const Events = () => {
 
   return (
     <AppWrapper>
-      <section>
-        {response.results.map((item) => {
-          return (
-            <EventRow
-              key={item.pk}
-              eventLogo={item.banner_img}
-              eventName={item.name}
-              eventDate={item.date}
-            />
-          );
-        })}
-      </section>
+      <EventsList rows={response.data.results} />
     </AppWrapper>
   );
 };

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const SpeakerWrapper = styled.div`
   display: flex;
   align-items: center;
+  margin: 1.25rem 0;
 
   @media (max-width: 480px) {
     flex-direction: column;
@@ -15,6 +16,7 @@ export const SpeakerInfoWrapper = styled.div`
   @media (max-width: 480px) {
     text-align: center;
     margin-left: 0;
+    margin-top: 0.5rem;
   }
 `;
 

@@ -7,6 +7,7 @@ const EventForms = () => {
   return (
     <section>
       <h2>{`${data.name}`}</h2>
+      <SponsorsForm sponsors={data.sponsors} />
     </section>
   );
 };

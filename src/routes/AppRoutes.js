@@ -5,6 +5,7 @@ import AppWrapper from '../components/AppWrapper';
 import Home from '../containers/Home';
 import PrivateRoute from './PrivateRoute';
 import EventForms from '../containers/EventForms';
+import Events from '../containers/Events';
 import { EventProvider } from '../context/event-context';
 const EventRender = () => {
   return (
@@ -15,11 +16,6 @@ const EventRender = () => {
     </AppWrapper>
   );
 };
-const events = () => (
-  <AppWrapper>
-    <h3>EVETNS</h3>
-  </AppWrapper>
-);
 const staff = () => (
   <AppWrapper>
     <h3>Staff</h3>
@@ -43,7 +39,7 @@ const AppRoutes = ({ authAndUser }) => {
         exact
         authed={authAndUser}
         path='/events'
-        component={events}
+        component={Events}
       />
       <PrivateRoute
         exact

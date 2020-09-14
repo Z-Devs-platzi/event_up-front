@@ -21,7 +21,7 @@ const EventRow = ({
   };
 
   const links = [
-    { to: '/edit', iconItem: icons.edit },
+    { to: `/event/${eventName}`, iconItem: icons.edit },
     { to: '/delete', iconItem: icons.delete },
     { to: '/publish', iconItem: icons.publish },
   ];

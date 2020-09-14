@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Spiner from '../components/Spiner';
 import { CenterDiv } from '../styles/GlobalStyles';
 import { useFetch } from '../utility/hooks/useFetch';
-import { UserRequest } from '../utility/enpoints/auth';
+import { GetEventRequest } from '../utility/enpoints/event';
 // remove for the get event data
 import { getToken } from '../auth-provider';
 
@@ -12,8 +12,8 @@ const EventContext = React.createContext();
 export const EventProvider = (props) => {
   let { eventname } = useParams();
 
-  let { isLoading } = useFetch(UserRequest, {
-    path: '',
+  let { isLoading } = useFetch(GetEventRequest, {
+    path: `${eventname}`,
     body: null,
     params: {},
     headers: {
@@ -22,53 +22,82 @@ export const EventProvider = (props) => {
   });
 
   const [data, setData] = useState({
-    pk: '2541251245214',
-    name: 'super_event',
-    date: '2020-09-25T06:00:00-05:00',
-    description: 'A super Event',
-    url: 'https://avatars1.githubusercontent.com/u/69704720?s=200&v=4',
-    banner_img:
-      'https://www.outinperth.com/wp-content/uploads/2014/09/Random-FB-BANNER.jpg',
-    banner_title: 'Super Even',
-    template: 1,
-    expoistors: [],
+    id: '',
+    name: '',
+    date: '',
+    description: '',
+    url: '',
+    banner_img: '',
+    banner_title: '',
+    template: {
+      id: 1,
+      colors: '',
+      banner: '',
+      font: '',
+      layout: {
+        id: 1,
+        comment: '',
+      },
+    },
     sponsors: [],
-    schedules: [],
+    schedule: [
+      {
+        id: '',
+        title: '',
+        date: '',
+        expositors: [
+          {
+            name: '',
+            bio: '',
+            twitter: '',
+            picture: '',
+          },
+        ],
+      },
+    ],
   });
-
-  useEffect(() => {
-    // will fetch the data.
+  const firstUpdate = useRef(true);
+  useLayoutEffect(() => {
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+      return;
+    }
     setData({
-      pk: '4521452415',
-      name: eventname,
-      date: '2020-09-25T06:00:00-05:00',
-      description: 'A ULTRA Event',
-      url: 'https://avatars1.githubusercontent.com/u/69704720?s=200&v=4',
-      banner_img:
-        'https://www.outinperth.com/wp-content/uploads/2014/09/Random-FB-BANNER.jpg',
-      banner_title: 'ULTRA Even',
-      template: 1,
-      expoistors: [],
-      sponsors: [
-        {
-          pk: 1,
-          name: 'ASUNA',
-          level: 'gold',
-          web: 'https://github.com',
-          logo:
-            'http://localhost:8000/media/sponsors/pictures/Captura_de_Pantalla_2020-08-13_a_las_22.12.13_r1fdMqP.png',
+      id: '',
+      name: '',
+      date: '',
+      description: '',
+      url: '',
+      banner_img: '',
+      banner_title: '',
+      template: {
+        id: 1,
+        colors: '',
+        banner: '',
+        font: '',
+        layout: {
+          id: 1,
+          comment: '',
         },
+      },
+      sponsors: [],
+      schedule: [
         {
-          pk: 2,
-          name: 'Malika Mraz',
-          level: 'gold',
-          web: 'https://s3.amazonaws.com/uifaces/faces/twitter/knilob/128.jpg',
-          logo:
-            'http://localhost:8000/media/sponsors/pictures/Captura_de_Pantalla_2020-08-19_a_las_17.52.12.png',
+          id: '',
+          title: '',
+          date: '',
+          expositors: [
+            {
+              name: '',
+              bio: '',
+              twitter: '',
+              picture: '',
+            },
+          ],
         },
       ],
-      schedules: [],
     });
+    console.log('component Did Update Function ', eventname);
   }, [eventname]);
 
   if (isLoading) {

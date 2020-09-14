@@ -49,25 +49,29 @@ const SponsorsForm = ({ sponsors }) => {
       <Button buttonType='outline' onClick={handlerClick}>
         New sponsor <BiPlusCircle className='icon' />
       </Button>
-      {sponsorsItems.map((item, i) => {
-        return (
-          <SponsorItem
-            key={`${item.pk} ${i}`}
-            pk={item.pk}
-            web_url={item.web}
-            sponsor_name={item.name}
-            logo_url={item.logo}
-            editState={false}
-            saveSponsor={SaveSomeSponsor}
-          ></SponsorItem>
-        );
-      })}
+      {sponsorsItems.length > 0 ? (
+        sponsorsItems.map((item, i) => {
+          return (
+            <SponsorItem
+              key={`${item.pk} ${i}`}
+              pk={item.pk}
+              web_url={item.web}
+              sponsor_name={item.name}
+              logo_url={item.logo}
+              editState={false}
+              saveSponsor={SaveSomeSponsor}
+            ></SponsorItem>
+          );
+        })
+      ) : (
+        <p>Add a Sponsor</p>
+      )}
     </CardDiv>
   );
 };
 
 SponsorsForm.defaultProps = {
-  sponsors: [{}],
+  sponsors: [],
 };
 
 SponsorsForm.propTypes = {

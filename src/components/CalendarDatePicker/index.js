@@ -1,29 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { LabelText, DateInput } from './styles';
 import PropTypes from 'prop-types';
 
-// import { LabelText } from './InputDateTime.styles';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const CustomField = ({ value, onClick, error }) => (
   <DateInput value={value} onClick={onClick} />
 );
 
-const InputDateTime = ({ eventDate, id }) => {
-  const [startDate, setStartDate] = useState(eventDate && null);
+const InputDateTime = ({ id, logical }) => {
+  const [startDate, setStartDate] = useState(logical.value);
 
-  useEffect(() => {
-    setStartDate(eventDate);
-  }, [eventDate]);
-
+  const handlerChange = (date) => {
+    setStartDate(date);
+    logical.onChange({ target: { value: date } });
+  };
   return (
     <>
       <LabelText htmlFor={id}>Date / Time</LabelText>
       <br />
       <DatePicker
         selected={startDate}
-        onChange={(date) => setStartDate(date)}
+        onChange={handlerChange}
         showTimeSelect
         timeFormat='HH:mm'
         timeIntervals={30}
@@ -42,8 +41,11 @@ CustomField.propTypes = {
 };
 
 InputDateTime.propTypes = {
-  eventDate: PropTypes.instanceOf(Date),
   id: PropTypes.string.isRequired,
+  logical: PropTypes.shape({
+    value: PropTypes.instanceOf(Date),
+    onChange: PropTypes.func,
+  }).isRequired,
 };
 
 InputDateTime.defaultProps = {

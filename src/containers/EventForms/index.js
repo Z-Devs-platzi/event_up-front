@@ -1,12 +1,15 @@
 import React from 'react';
 import { useEventState } from '../../context/event-context';
 import SponsorsForm from '../../components/SponsorsForm';
+import GeneralForm from '../../components/GeneralForm';
 const EventForms = () => {
   let { data } = useEventState();
 
   return (
     <section>
       <h2>{`${data.name}`}</h2>
+      <GeneralForm></GeneralForm>
+      <SponsorsForm sponsors={data.sponsors} />
     </section>
   );
 };

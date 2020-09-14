@@ -33,6 +33,7 @@ export const BaseGendpoint = (
 };
 const HandlerError = (err) => {
   let { data } = err.response;
+  console.error(data.message);
   throw new Error(data.message);
 };
 export default API;
